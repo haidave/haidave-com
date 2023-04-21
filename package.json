@@ -10,7 +10,8 @@
     "lint": "next lint",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "format:validate": "prettier --list-different ."
+    "format:validate": "prettier --list-different .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "18.15.12",
@@ -34,6 +35,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-tailwindcss": "^3.11.0",
+    "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7"
