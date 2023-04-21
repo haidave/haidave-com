@@ -1,0 +1,8 @@
+# 3rd Party Code
+node_modules
+
+# Generated
+.next
+coverage
+next-env.d.ts
+CHANGELOG.md
