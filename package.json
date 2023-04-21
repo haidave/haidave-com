@@ -11,6 +11,7 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "format:validate": "prettier --list-different .",
+    "typecheck": "tsc --project ./tsconfig.json",
     "prepare": "husky install"
   },
   "dependencies": {
