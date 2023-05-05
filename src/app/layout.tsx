@@ -1,6 +1,6 @@
 import './globals.css'
 
-import { ppAgrandir, iaWriterQuattro } from '~/modules/design-system/theme/fonts'
+import { inter } from '~/modules/design-system/theme/fonts'
 
 export const metadata = {
   title: 'haidave.com',
@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${ppAgrandir.variable} ${iaWriterQuattro.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <body>{children}</body>
     </html>
   )
