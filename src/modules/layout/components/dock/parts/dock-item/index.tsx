@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
-import { type MotionValue, motion, useTransform, useSpring, useAnimationControls } from 'framer-motion'
+import { usePathname, useRouter } from 'next/navigation'
+import { motion, useAnimationControls, useSpring, useTransform, type MotionValue } from 'framer-motion'
 
 import { cn } from '~/lib/utils'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '~/modules/design-system/components/tooltip'

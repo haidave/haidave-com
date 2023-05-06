@@ -1,7 +1,7 @@
-import './globals.css'
-
 import { inter } from '~/modules/design-system/theme/fonts'
 import { Dock } from '~/modules/layout/components/dock'
+
+import '~/styles/globals.css'
 
 export const metadata = {
   title: 'haidave.com',
