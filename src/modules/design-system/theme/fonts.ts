@@ -1,15 +1,8 @@
-import localFont from '@next/font/local'
+import { Inter } from 'next/font/google'
 
-const ppAgrandir = localFont({
-  src: '../../../../public/fonts/PPAgrandir-Regular.woff2',
-  weight: '400',
+const inter = Inter({
+  subsets: ['latin'],
   variable: '--font-sans',
 })
 
-const iaWriterQuattro = localFont({
-  src: '../../../../public/fonts/iAWriterQuattroS-Regular.woff2',
-  weight: '400',
-  variable: '--font-mono',
-})
-
-export { ppAgrandir, iaWriterQuattro }
+export { inter }

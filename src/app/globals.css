@@ -2,12 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS Reset from https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* Custom CSS Variables */
+@layer base {
+  :root {
+    /* Text */
+    --text-primary: #ededed;
+    --text-secondary: #a0a0a0;
+    --text-tertiary: #7e7e7e;
+    --text-gradient: linear-gradient(333deg, #aaa, #fff);
+    --shadow-focus: 0 0 0 2px hsla(0, 0%, 93%, 0.4);
 
+    /* Background */
+    --bg-primary: #161616;
+    --bg-secondary: #1c1c1c;
+    --bg-tertiary: #232323;
+    --overlay: rgba(0, 0, 0, 0.7);
+
+    /* Border */
+    --border-primary: #2e2e2e;
+  }
+}
+
+/* Custom CSS Reset from https://www.joshwcomeau.com/css/custom-css-reset/ */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  /* custom styles for borders */
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--border-primary);
 }
 
 * {

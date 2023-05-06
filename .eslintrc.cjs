@@ -14,7 +14,17 @@ const config = {
         project: path.join(__dirname, 'tsconfig.json'),
       },
       plugins: ['tailwindcss'],
+      settings: {
+        tailwindcss: {
+          callees: ['cn'],
+          config: 'tailwind.config.js',
+        },
+      },
       rules: {
+        // TODO: temporary disable this rule because it's conflicting with prettier-plugin-tailwindcss
+        // https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/231
+        'tailwindcss/classnames-order': 'off',
+        'tailwindcss/no-custom-classname': 'off',
         '@typescript-eslint/naming-convention': [
           'warn',
           {
