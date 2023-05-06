@@ -8,11 +8,12 @@ import { cn } from '~/lib/utils'
 
 type DockItemProps = {
   href: string
+  icon: NonNullable<React.ReactNode>
   shortcut: string
   mouseX: MotionValue
 }
 
-const DockItem: React.FC<DockItemProps> = ({ href, shortcut, mouseX }) => {
+const DockItem: React.FC<DockItemProps> = ({ href, icon, shortcut, mouseX }) => {
   const router = useRouter()
   const pathname = usePathname()
   const isActive = pathname === href
@@ -62,13 +63,9 @@ const DockItem: React.FC<DockItemProps> = ({ href, shortcut, mouseX }) => {
           },
         }}
         whileTap={{ scale: isActive ? 1 : 0.8 }}
-        className={cn(
-          'grid aspect-square w-10 place-items-center rounded-full bg-tertiary',
-          'hover:bg-secondary',
-          isActive ? 'font-bold' : ''
-        )}
+        className={cn('grid aspect-square w-10 place-items-center rounded-full bg-tertiary', 'hover:bg-secondary')}
       >
-        {shortcut}
+        <div className="grid h-1/2 w-1/2 place-items-center">{icon}</div>
       </motion.button>
       {isActive ? <div className="absolute -bottom-2 left-1/2 h-1 w-1 rounded-full bg-[#7e7e7e]" /> : null}
     </motion.li>
