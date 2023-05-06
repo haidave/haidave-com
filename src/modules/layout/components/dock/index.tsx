@@ -1,9 +1,11 @@
 'use client'
 
-import { ROUTES } from '~/config/routes'
-import { DockItem } from './parts/dock-item'
 import { useMotionValue } from 'framer-motion'
-import { HomeIcon, UserIcon, FolderClosedIcon, PencilIcon } from 'lucide-react'
+import { FolderClosedIcon, HomeIcon, PencilIcon, UserIcon } from 'lucide-react'
+
+import { ROUTES } from '~/config/routes'
+
+import { DockItem } from './parts/dock-item'
 
 const Dock = () => {
   const mouseX = useMotionValue(Infinity)
