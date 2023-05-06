@@ -5,15 +5,17 @@ import { useRouter, usePathname } from 'next/navigation'
 import { type MotionValue, motion, useTransform, useSpring, useAnimationControls } from 'framer-motion'
 
 import { cn } from '~/lib/utils'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '~/modules/design-system/components/tooltip'
 
 type DockItemProps = {
   href: string
   icon: NonNullable<React.ReactNode>
+  tooltip: string
   shortcut: string
   mouseX: MotionValue
 }
 
-const DockItem: React.FC<DockItemProps> = ({ href, icon, shortcut, mouseX }) => {
+const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mouseX }) => {
   const router = useRouter()
   const pathname = usePathname()
   const isActive = pathname === href
@@ -48,25 +50,42 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, shortcut, mouseX }) => 
         void controls.start(() => ({ translateY: [0, -30, 0] }))
       }}
     >
-      <motion.button
-        ref={ref}
-        style={{ width }}
-        animate={controls}
-        transition={{
-          default: {
-            duration: 0.2,
-          },
-          translateY: {
-            duration: 0.4,
-            ease: 'easeInOut',
-            times: [0, 0.5, 1],
-          },
-        }}
-        whileTap={{ scale: isActive ? 1 : 0.8 }}
-        className={cn('grid aspect-square w-10 place-items-center rounded-full bg-tertiary', 'hover:bg-secondary')}
-      >
-        <div className="grid h-1/2 w-1/2 place-items-center">{icon}</div>
-      </motion.button>
+      <TooltipProvider delayDuration={200}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <motion.button
+              ref={ref}
+              style={{ width }}
+              animate={controls}
+              transition={{
+                default: {
+                  duration: 0.2,
+                },
+                translateY: {
+                  duration: 0.4,
+                  ease: 'easeInOut',
+                  times: [0, 0.5, 1],
+                },
+              }}
+              whileTap={{ scale: isActive ? 1 : 0.8 }}
+              className={cn(
+                'grid aspect-square w-10 place-items-center rounded-full bg-tertiary',
+                'hover:bg-secondary'
+              )}
+            >
+              <div className="grid h-1/2 w-1/2 place-items-center">{icon}</div>
+            </motion.button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <div className="flex items-center gap-2">
+              {tooltip}
+              <span className="grid h-5 w-5 place-items-center rounded-md bg-tertiary font-bold text-tertiary">
+                {shortcut}
+              </span>
+            </div>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
       {isActive ? <div className="absolute -bottom-2 left-1/2 h-1 w-1 rounded-full bg-[#7e7e7e]" /> : null}
     </motion.li>
   )
