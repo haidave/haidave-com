@@ -73,20 +73,20 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
                 'hover:bg-secondary'
               )}
             >
-              <div className="grid h-1/2 w-1/2 place-items-center">{icon}</div>
+              <div className={cn('grid h-1/2 w-1/2 place-items-center', isActive ? 'text-secondary' : 'text-tertiary')}>
+                {icon}
+              </div>
             </motion.button>
           </TooltipTrigger>
           <TooltipContent>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-secondary">
               {tooltip}
-              <span className="grid h-5 w-5 place-items-center rounded-md bg-tertiary font-bold text-tertiary">
-                {shortcut}
-              </span>
+              <span className="grid h-5 w-5 place-items-center rounded-md bg-tertiary font-bold">{shortcut}</span>
             </div>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      {isActive ? <div className="absolute -bottom-2 left-1/2 h-1 w-1 rounded-full bg-[#7e7e7e]" /> : null}
+      {isActive ? <div className="absolute -bottom-2 left-1/2 h-1 w-1 rounded-full bg-[#a0a0a0]" /> : null}
     </motion.li>
   )
 }

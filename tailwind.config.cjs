@@ -8,7 +8,7 @@ const config = {
       },
       textColor: {
         primary: 'var(--text-primary)',
-        secondary: 'var(-text-secondary)',
+        secondary: 'var(--text-secondary)',
         tertiary: 'var(--text-tertiary)',
       },
       backgroundColor: {
