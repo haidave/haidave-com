@@ -23,9 +23,10 @@
       }
     ],
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
-  "include": [".eslintrc.cjs", "next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs", ".next/types/**/*.ts"],
+  "include": [".eslintrc.cjs", "next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.cjs", "**/*.mjs", ".next/types/**/*.ts", ".contentlayer/generated"],
   "exclude": ["node_modules"]
 }
