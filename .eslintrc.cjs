@@ -25,41 +25,6 @@ const config = {
         // https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/231
         'tailwindcss/classnames-order': 'off',
         'tailwindcss/no-custom-classname': 'off',
-        '@typescript-eslint/naming-convention': [
-          'warn',
-          {
-            selector: 'memberLike',
-            modifiers: ['private'],
-            format: ['camelCase'],
-            leadingUnderscore: 'forbid',
-          },
-          {
-            selector: 'variable',
-            types: ['boolean'],
-            format: ['PascalCase'],
-            prefix: ['is', 'should', 'has', 'can', 'did', 'will', 'expected'],
-            filter: {
-              regex: '(loading)',
-              match: false,
-            },
-          },
-          {
-            selector: 'typeParameter',
-            format: ['PascalCase'],
-            custom: {
-              regex: 'T([A-Z][a-zA-Z]+)?$',
-              match: true,
-            },
-          },
-          {
-            selector: 'interface',
-            format: ['PascalCase'],
-            custom: {
-              regex: '^I[A-Z]',
-              match: true,
-            },
-          },
-        ],
       },
     },
     {
