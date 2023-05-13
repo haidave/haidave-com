@@ -20,6 +20,9 @@
 
     /* Border */
     --border-primary: #2e2e2e;
+
+    /* Widths */
+    --max-width-section: 42.5rem; /* 680px */
   }
 }
 

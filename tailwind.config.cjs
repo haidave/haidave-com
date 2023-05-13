@@ -21,6 +21,9 @@ const config = {
         secondary: 'var(--bg-secondary)',
         tertiary: 'var(--bg-tertiary)',
       },
+      maxWidth: {
+        section: 'var(--max-width-section)',
+      },
     },
   },
   plugins: [],
