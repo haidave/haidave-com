@@ -3,7 +3,7 @@ type SectionContainerProps = {
 }
 
 const SectionContainer = ({ children }: SectionContainerProps) => {
-  return <section className="mx-auto max-w-section px-6 py-24">{children}</section>
+  return <section className="relative mx-auto max-w-section px-6 py-24">{children}</section>
 }
 
 const SectionTitle = ({ children }: SectionContainerProps) => {

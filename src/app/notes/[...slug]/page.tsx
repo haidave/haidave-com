@@ -47,7 +47,7 @@ export default async function NotePage({ params }: NoteProps) {
   }
 
   return (
-    <article className="prose dark:prose-invert py-6">
+    <article className="">
       <h1 className="mb-2">{note.title}</h1>
       {note.description && <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">{note.description}</p>}
     </article>
