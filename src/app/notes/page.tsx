@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { allNotes } from 'contentlayer/generated'
 
+import { Section } from '~/modules/layout/components/section'
+
 export const metadata: Metadata = {
   title: 'Notes',
   description: 'Brain dumps, explorations, and how-to guides.',
@@ -9,20 +11,19 @@ export const metadata: Metadata = {
 
 export default function NotesPage() {
   return (
-    <section>
-      <h1 className="font-bold">Notes</h1>
-      <p>Brain dumps, explorations, and how-to guides.</p>
+    <Section.Root>
+      <Section.Title>Notes</Section.Title>
       <div className="mt-5 grid gap-4">
         {allNotes.map((note) => (
-          <article key={note._id} className="border">
-            <Link href={note.slug}>
+          <Link href={note.slug} key={note._id} className="border">
+            <article>
               <h2 className="font-bold">{note.title}</h2>
               <p>{note.description}</p>
-              <code>{note.publishedAt}</code>
-            </Link>
-          </article>
+              <span>{note.publishedAt}</span>
+            </article>
+          </Link>
         ))}
       </div>
-    </section>
+    </Section.Root>
   )
 }
