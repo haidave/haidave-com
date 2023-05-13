@@ -18,7 +18,7 @@ type DockItemProps = {
 const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mouseX }) => {
   const router = useRouter()
   const pathname = usePathname()
-  const isActive = pathname === href
+  const isActive = pathname === href || pathname.startsWith(`${href}/`)
 
   const ref = useRef<HTMLButtonElement>(null)
   const controls = useAnimationControls()
