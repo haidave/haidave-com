@@ -47,9 +47,12 @@ export default async function NotePage({ params }: NoteProps) {
   }
 
   return (
-    <article className="">
-      <h1 className="mb-2">{note.title}</h1>
-      {note.description && <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">{note.description}</p>}
+    <article>
+      <div className="grid gap-2">
+        <h1 className="font-bold">{note.title}</h1>
+        <span className="text-xs text-secondary">{note.publishedAt}</span>
+      </div>
+      <div className="mt-8">{note.description}</div>
     </article>
   )
 }

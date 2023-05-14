@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { allNotes } from 'contentlayer/generated'
+import { ArrowRightIcon } from 'lucide-react'
 
 import { cn } from '~/lib/utils'
 import { Section } from '~/modules/layout/components/section'
@@ -24,13 +25,15 @@ export default function NotesPage() {
                 'hover:bg-tertiary focus:bg-tertiary active:bg-secondary'
               )}
             >
-              <div className="flex items-center justify-between gap-2">
-                <div>
+              <div className="flex items-center justify-between">
+                <div className="mr-8 grid gap-1">
                   <h2 className="font-bold">{note.title}</h2>
                   <p className="text-sm text-secondary">{note.description}</p>
                   <span className="text-xs text-tertiary">{note.publishedAt}</span>
                 </div>
-                <span className="hidden group-hover:block">→</span>
+                <span className="hidden group-hover:block">
+                  <ArrowRightIcon size={18} />
+                </span>
               </div>
             </Link>
           </article>
