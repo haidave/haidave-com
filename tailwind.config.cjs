@@ -27,6 +27,9 @@ const config = {
     },
   },
   plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 }
 
 module.exports = config
