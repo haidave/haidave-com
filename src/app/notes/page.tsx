@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { allNotes } from 'contentlayer/generated'
+import { compareDesc, format, parseISO } from 'date-fns'
 import { ArrowRightIcon } from 'lucide-react'
 
 import { cn } from '~/lib/utils'
@@ -12,11 +13,13 @@ export const metadata: Metadata = {
 }
 
 export default function NotesPage() {
+  const notes = allNotes.sort((a, b) => compareDesc(new Date(a.publishedAt), new Date(b.publishedAt)))
+
   return (
     <Section.Root>
       <Section.Title>Notes</Section.Title>
       <div className="mt-6 grid gap-1">
-        {allNotes.map((note) => (
+        {notes.map((note) => (
           <article key={note._id} className="group">
             <Link
               href={note.slug}
@@ -29,7 +32,7 @@ export default function NotesPage() {
                 <div className="mr-8 grid gap-1">
                   <h2 className="font-bold">{note.title}</h2>
                   <p className="text-sm text-secondary">{note.description}</p>
-                  <span className="text-xs text-tertiary">{note.publishedAt}</span>
+                  <span className="text-xs text-tertiary">{format(parseISO(note.publishedAt), 'LLL d, yyyy')}</span>
                 </div>
                 <span className="hidden group-hover:block">
                   <ArrowRightIcon size={18} />

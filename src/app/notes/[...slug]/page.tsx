@@ -1,6 +1,7 @@
 import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { allNotes } from 'contentlayer/generated'
+import { format, parseISO } from 'date-fns'
 
 interface NoteProps {
   params: {
@@ -50,7 +51,7 @@ export default async function NotePage({ params }: NoteProps) {
     <article>
       <div className="grid gap-2">
         <h1 className="font-bold">{note.title}</h1>
-        <span className="text-xs text-secondary">{note.publishedAt}</span>
+        <span className="text-xs text-secondary">{format(parseISO(note.publishedAt), 'LLL d, yyyy')}</span>
       </div>
       <div className="mt-8">{note.description}</div>
     </article>
