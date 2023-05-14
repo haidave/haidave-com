@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { allNotes } from 'contentlayer/generated'
 
+import { cn } from '~/lib/utils'
 import { Section } from '~/modules/layout/components/section'
 
 export const metadata: Metadata = {
@@ -13,15 +14,26 @@ export default function NotesPage() {
   return (
     <Section.Root>
       <Section.Title>Notes</Section.Title>
-      <div className="mt-5 grid gap-4">
+      <div className="mt-6 grid gap-1">
         {allNotes.map((note) => (
-          <Link href={note.slug} key={note._id} className="border">
-            <article>
-              <h2 className="font-bold">{note.title}</h2>
-              <p>{note.description}</p>
-              <span>{note.publishedAt}</span>
-            </article>
-          </Link>
+          <article key={note._id} className="group">
+            <Link
+              href={note.slug}
+              className={cn(
+                '-ml-4 grid gap-2 rounded-xl p-4',
+                'hover:bg-tertiary focus:bg-tertiary active:bg-secondary'
+              )}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div>
+                  <h2 className="font-bold">{note.title}</h2>
+                  <p className="text-sm text-secondary">{note.description}</p>
+                  <span className="text-xs text-tertiary">{note.publishedAt}</span>
+                </div>
+                <span className="hidden group-hover:block">→</span>
+              </div>
+            </Link>
+          </article>
         ))}
       </div>
     </Section.Root>
