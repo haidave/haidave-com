@@ -7,5 +7,6 @@ coverage
 global.d.ts
 next-env.d.ts
 CHANGELOG.md
+.contentlayer
 
 !.*.js
