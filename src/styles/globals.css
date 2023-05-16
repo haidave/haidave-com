@@ -20,6 +20,9 @@
 
     /* Border */
     --border-primary: #2e2e2e;
+
+    /* Widths */
+    --max-width-section: 42.5rem; /* 680px */
   }
 }
 
@@ -48,7 +51,7 @@ body {
 
 body {
   /* https://www.joshwcomeau.com/css/custom-css-reset/#digit-tweaking-line-height */
-  line-height: 'calc(1em + 0.5rem)';
+  line-height: calc(1em + 0.5rem);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

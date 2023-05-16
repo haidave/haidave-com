@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/modules/**/*.{js,ts,jsx,tsx}', './src/app/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/content/**/*.{md,mdx}',
+    './src/modules/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -8,7 +13,7 @@ const config = {
       },
       textColor: {
         primary: 'var(--text-primary)',
-        secondary: 'var(-text-secondary)',
+        secondary: 'var(--text-secondary)',
         tertiary: 'var(--text-tertiary)',
       },
       backgroundColor: {
@@ -16,9 +21,15 @@ const config = {
         secondary: 'var(--bg-secondary)',
         tertiary: 'var(--bg-tertiary)',
       },
+      maxWidth: {
+        section: 'var(--max-width-section)',
+      },
     },
   },
   plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 }
 
 module.exports = config

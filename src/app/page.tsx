@@ -1,7 +1,9 @@
-export default function Home() {
+import { Section } from '~/modules/layout/components/section'
+
+export default function HomePage() {
   return (
-    <div className="w-full">
-      <h1>haidave</h1>
-    </div>
+    <Section.Root>
+      <Section.Title>Home</Section.Title>
+    </Section.Root>
   )
 }
