@@ -39,6 +39,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Generate contentlayer files
+        run: pnpm contentlayer build
+
       - name: Validate Code Formatting
         run: pnpm format:validate
 
