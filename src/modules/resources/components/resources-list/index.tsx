@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import { cn } from '~/lib/utils'
 
@@ -22,12 +23,21 @@ export default function ResourcesList() {
             key={category}
             onClick={() => setSelectedCategory(category === 'All' ? null : category)}
             className={cn(
-              'h-6 rounded-full border border-[#232323] px-3 text-xs font-medium text-white',
-              selectedCategory === category || (category === 'All' && !selectedCategory)
-                ? 'bg-tertiary'
-                : 'hover:bg-secondary'
+              'relative h-6 rounded-full border border-[#232323] px-3 text-xs font-medium text-white transition',
+              selectedCategory === category || (category === 'All' && !selectedCategory) ? '' : 'hover:bg-secondary'
             )}
+            style={{
+              WebkitTapHighlightColor: 'transparent',
+            }}
           >
+            {selectedCategory === category || (category === 'All' && !selectedCategory) ? (
+              <motion.span
+                layoutId="bubble"
+                className="absolute inset-0 z-10 bg-[#ededed] mix-blend-difference"
+                style={{ borderRadius: 9999 }}
+                transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+              />
+            ) : null}
             {category}
           </button>
         ))}
