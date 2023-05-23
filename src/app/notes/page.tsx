@@ -21,13 +21,7 @@ export default function NotesPage() {
       <div className="mt-6 grid gap-1">
         {notes.map((note) => (
           <article key={note._id} className="group">
-            <Link
-              href={note.slug}
-              className={cn(
-                '-ml-4 grid gap-2 rounded-xl p-4',
-                'hover:bg-tertiary focus:bg-tertiary active:bg-secondary'
-              )}
-            >
+            <Link href={note.slug} className={cn('-mx-4 grid gap-2 rounded-xl p-4', 'hover:bg-tertiary')}>
               <div className="flex items-center justify-between">
                 <div className="mr-8 grid gap-1">
                   <h2 className="font-bold">{note.title}</h2>
