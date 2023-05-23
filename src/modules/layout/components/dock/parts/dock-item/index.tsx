@@ -70,7 +70,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
               whileTap={{ scale: isActive ? 1 : 0.8 }}
               className={cn(
                 'grid aspect-square w-10 place-items-center rounded-full bg-tertiary',
-                'hover:bg-secondary'
+                'hover:bg-secondary focus-visible:shadow-focus focus-visible:outline-0'
               )}
             >
               <div className={cn('grid h-1/2 w-1/2 place-items-center', isActive ? 'text-secondary' : 'text-tertiary')}>

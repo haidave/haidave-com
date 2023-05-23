@@ -24,6 +24,7 @@ export default function ResourcesList() {
             onClick={() => setSelectedCategory(category === 'All' ? null : category)}
             className={cn(
               'relative h-6 rounded-full border border-[#232323] px-3 text-xs font-medium text-white transition',
+              'focus-visible:shadow-focus focus-visible:outline-0',
               selectedCategory === category || (category === 'All' && !selectedCategory) ? '' : 'hover:bg-secondary'
             )}
             style={{
@@ -49,7 +50,10 @@ export default function ResourcesList() {
             key={resource.id}
             href={resource.url}
             target="_blank"
-            className={cn('-mx-4 flex items-center gap-4 rounded-xl px-4', 'hover:bg-tertiary')}
+            className={cn(
+              '-mx-4 flex items-center gap-4 rounded-xl px-4',
+              'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0'
+            )}
           >
             <div className="h-6 w-6 bg-black" />
             <div

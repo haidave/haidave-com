@@ -24,6 +24,9 @@ const config = {
       maxWidth: {
         section: 'var(--max-width-section)',
       },
+      boxShadow: {
+        focus: 'var(--shadow-focus)',
+      },
     },
   },
   plugins: [],
