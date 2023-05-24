@@ -10,8 +10,19 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <Section.Root>
-      <Section.Title>About me</Section.Title>
-      <Section.Description>Heyo, I&apos;m Dave - Frontend Developer at STRV.</Section.Description>
+      <Section.Title>About</Section.Title>
+      <Section.Description>
+        Frontend Developer interested in TODO, currently working at{' '}
+        <a
+          href="https://www.strv.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-[#7e7e7e] underline-offset-2"
+        >
+          STRV
+        </a>
+        .
+      </Section.Description>
     </Section.Root>
   )
 }
