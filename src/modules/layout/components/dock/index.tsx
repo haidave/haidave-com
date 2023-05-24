@@ -1,7 +1,7 @@
 'use client'
 
 import { useMotionValue } from 'framer-motion'
-import { FolderClosedIcon, HomeIcon, PencilIcon, UserIcon } from 'lucide-react'
+import { FolderClosedIcon, HomeIcon, PencilIcon, UserIcon, WrenchIcon } from 'lucide-react'
 
 import { ROUTES } from '~/config/routes'
 
@@ -40,10 +40,17 @@ const Dock = () => {
           mouseX={mouseX}
         />
         <DockItem
+          href={ROUTES.tools}
+          icon={<WrenchIcon className={iconStyles} />}
+          tooltip="tools"
+          shortcut="4"
+          mouseX={mouseX}
+        />
+        <DockItem
           href={ROUTES.notes}
           icon={<PencilIcon className={iconStyles} />}
           tooltip="notes"
-          shortcut="4"
+          shortcut="5"
           mouseX={mouseX}
         />
       </ul>
