@@ -69,8 +69,8 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
               }}
               whileTap={{ scale: isActive ? 1 : 0.8 }}
               className={cn(
-                'relative grid aspect-square w-10 place-items-center rounded-full bg-tertiary',
-                'hover:bg-secondary focus-visible:shadow-focus focus-visible:outline-0'
+                'relative grid aspect-square w-10 place-items-center rounded-full bg-secondary',
+                'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0'
               )}
             >
               <div
