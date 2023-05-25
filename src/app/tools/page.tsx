@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
-import ToolsList from '~/modules/about/components/tools-list'
 import { Section } from '~/modules/layout/components/section'
+import ToolsList from '~/modules/tools/components/tools-list'
 
 export const metadata: Metadata = {
   title: 'Tools',
