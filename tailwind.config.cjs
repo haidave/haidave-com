@@ -18,8 +18,12 @@ const config = {
       },
       backgroundColor: {
         primary: 'var(--bg-primary)',
+        'primary-rgba': 'var(--bg-primary-rgba)',
         secondary: 'var(--bg-secondary)',
         tertiary: 'var(--bg-tertiary)',
+      },
+      backgroundImage: {
+        'linear-gradient': 'var(--bg-linear-gradient)',
       },
       maxWidth: {
         section: 'var(--max-width-section)',
