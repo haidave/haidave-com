@@ -5,14 +5,14 @@ import ToolsList from '~/modules/tools/components/tools-list'
 
 export const metadata: Metadata = {
   title: 'Tools',
-  description: 'What I use on my daily basis.',
+  description: 'My trusted tools for crafting.',
 }
 
 export default function ToolsPage() {
   return (
     <Section.Root>
       <Section.Title>Tools</Section.Title>
-      <Section.Description>What I use on my daily basis.</Section.Description>
+      <Section.Description>My trusted tools for crafting.</Section.Description>
       <ToolsList />
     </Section.Root>
   )

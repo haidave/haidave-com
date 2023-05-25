@@ -17,7 +17,7 @@ export default function ToolsList() {
               href={tool.link}
               target="_blank"
               className={cn(
-                '-mx-4 mt-[-0.0625rem] flex items-center gap-4 rounded-xl px-4',
+                '-mx-4 -mt-px flex items-center gap-4 rounded-xl px-4',
                 'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0'
               )}
             >
