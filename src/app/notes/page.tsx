@@ -9,7 +9,7 @@ import { Section } from '~/modules/layout/components/section'
 
 export const metadata: Metadata = {
   title: 'Notes',
-  description: 'Brain dumps, explorations and how-to guides. I write about coding and life.',
+  description: 'Brain dumps, explorations and how-to guides.',
 }
 
 export default function NotesPage() {
@@ -18,9 +18,7 @@ export default function NotesPage() {
   return (
     <Section.Root>
       <Section.Title>Notes</Section.Title>
-      <Section.Description>
-        Brain dumps, explorations and how-to guides. I write about coding and life.
-      </Section.Description>
+      <Section.Description>Brain dumps, explorations and how-to guides.</Section.Description>
       <div className="mt-2 grid gap-1">
         {notes.map((note) => (
           <article key={note._id} className="group">
