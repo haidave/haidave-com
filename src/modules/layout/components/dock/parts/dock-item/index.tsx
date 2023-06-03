@@ -75,7 +75,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
             >
               <div
                 aria-hidden="true"
-                className="absolute -top-px -z-10 h-full w-full rounded-full bg-linear-gradient"
+                className="absolute -top-px -z-10 h-full w-full rounded-full bg-linear-gradient-subtle"
               />
               {/* Hotfix to cover the linear gradient div which glitches on click*/}
               <div aria-hidden="true" className="absolute top-0 -z-10 h-full w-full rounded-full bg-tertiary" />
