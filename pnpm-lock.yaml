@@ -31,6 +31,9 @@ dependencies:
   react-wrap-balancer:
     specifier: ^0.5.0
     version: 0.5.0(react@18.2.0)
+  sonner:
+    specifier: ^0.4.0
+    version: 0.4.0(react-dom@18.2.0)(react@18.2.0)
 
 devDependencies:
   '@commitlint/cli':
@@ -6667,6 +6670,17 @@ packages:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 4.0.0
     dev: true
+
+  /sonner@0.4.0(react-dom@18.2.0)(react@18.2.0):
+    resolution:
+      { integrity: sha512-zEU/Mzur39xYPpyQOOCmN6YQftl5v+TSmdsmWEbWf6ovnOvnHyRwR7+/6BIBbzwRa8+3v06FJlpF7J3KS4Ll9Q== }
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /source-map-js@1.0.2:
     resolution:
