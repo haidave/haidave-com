@@ -109,6 +109,10 @@ a {
   text-decoration: inherit;
 }
 
+p {
+  line-height: 1.7;
+}
+
 p,
 h1,
 h2,

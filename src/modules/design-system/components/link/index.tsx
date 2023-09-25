@@ -18,14 +18,19 @@ export const Link = ({ href, isExternal, children }: LinkProps) => {
       target={target}
       rel={rel}
       className={cn(
-        'border-b-[1.5px] border-[#7e7e7e]',
+        'relative border-b-[1.5px] border-[#7e7e7e] pb-[1px]',
         'transition-colors duration-500 ease-in-out',
         'hover:border-[#ededed] focus-visible:shadow-focus focus-visible:outline-0',
-        isExternal ? 'pr-3' : null
+        isExternal ? 'pr-2' : null
       )}
     >
       {children}
-      {isExternal ? <span className="absolute mt-[0.3125rem] text-xs font-bold">↗</span> : null}
+      {isExternal ? (
+        <>
+          &nbsp;
+          <span className="absolute top-0 -ml-0.5 translate-y-0.5 text-xs font-bold">↗</span>
+        </>
+      ) : null}
     </NextLink>
   )
 }
