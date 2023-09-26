@@ -15,41 +15,27 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.4
-        id: pnpm-install
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
         with:
-          version: next-7
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          bun-version: latest
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install
 
       - name: Generate contentlayer files
-        run: pnpm contentlayer build
+        run: bun contentlayer build
 
       - name: Validate Code Formatting
-        run: pnpm format:validate
+        run: bun format:validate
 
       - name: Run linters
-        run: pnpm lint
+        run: bun lint
 
       - name: Verify typings
-        run: pnpm typecheck
+        run: bun typecheck
 
       - name: Build App
-        run: pnpm build
+        run: bun run build
