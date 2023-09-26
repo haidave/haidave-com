@@ -24,6 +24,7 @@ const config = {
       },
       backgroundImage: {
         'linear-gradient': 'var(--bg-linear-gradient)',
+        'linear-gradient-subtle': 'var(--bg-linear-gradient-subtle)',
       },
       maxWidth: {
         section: 'var(--max-width-section)',

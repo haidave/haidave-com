@@ -15,5 +15,5 @@ max_line_length = 120
 [{**.md,**.json}]
 max_line_length = off
 
-[{*.json,.eslintrc,.prettierrc,jest.config}]
+[{*.json,.eslintrc,.prettier.config}]
 indent_size = 2
