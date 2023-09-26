@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { motion, useAnimationControls, useSpring, useTransform, type MotionValue } from 'framer-motion'
 
@@ -19,6 +19,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
   const router = useRouter()
   const pathname = usePathname()
   const isActive = pathname === href || pathname.startsWith(`${href}/`)
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false)
 
   const ref = useRef<HTMLButtonElement>(null)
   const controls = useAnimationControls()
@@ -51,7 +52,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
       }}
     >
       <TooltipProvider delayDuration={200}>
-        <Tooltip>
+        <Tooltip defaultOpen={false}>
           <TooltipTrigger asChild>
             <motion.button
               ref={ref}
@@ -72,6 +73,8 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
                 'relative grid aspect-square w-10 place-items-center rounded-full bg-secondary',
                 'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0'
               )}
+              onMouseEnter={() => setIsTooltipOpen(true)}
+              onMouseLeave={() => setIsTooltipOpen(false)}
             >
               <div
                 aria-hidden="true"
@@ -84,12 +87,14 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
               </div>
             </motion.button>
           </TooltipTrigger>
-          <TooltipContent>
-            <div className="flex items-center gap-2 text-secondary">
-              {tooltip}
-              <span className="grid h-5 w-5 place-items-center rounded-md bg-tertiary font-bold">{shortcut}</span>
-            </div>
-          </TooltipContent>
+          {isTooltipOpen ? (
+            <TooltipContent>
+              <div className="flex items-center gap-2 text-secondary">
+                {tooltip}
+                <span className="grid h-5 w-5 place-items-center rounded-md bg-tertiary font-bold">{shortcut}</span>
+              </div>
+            </TooltipContent>
+          ) : null}
         </Tooltip>
       </TooltipProvider>
       {isActive ? <div className="absolute -bottom-2 left-1/2 h-1 w-1 rounded-full bg-[#a0a0a0]" /> : null}
