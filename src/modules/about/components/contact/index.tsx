@@ -5,7 +5,7 @@ import { Toaster, toast } from 'sonner'
 
 import { cn, copyToClipboard } from '~/lib/utils'
 import { Link } from '~/modules/design-system/components/link'
-import { Section } from '~/modules/layout/components/section'
+import { Section } from '~/modules/design-system/components/section'
 
 const Contact = () => {
   return (
