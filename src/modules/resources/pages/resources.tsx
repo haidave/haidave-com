@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 const ResourcesPage = () => {
   return (
-    <section className="relative mx-auto max-w-[1200px] px-6 pb-32 pt-24">
+    <Section.Root>
       <Section.Title>Resources</Section.Title>
       <Section.Description>A selection of websites, tools and people to inspire, learn and create.</Section.Description>
 
       <ResourcesList />
-    </section>
+    </Section.Root>
   )
 }
 
