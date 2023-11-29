@@ -66,7 +66,7 @@ const HomePageContent = () => {
 
   return (
     <AnimatePresence initial={false}>
-      <div className="mt-14 grid gap-14">
+      <div className="mt-10 grid gap-10 sm:mt-14 sm:gap-14">
         <div className="grid gap-4">
           <p>
             Crafting polished web experiences with React & Next.js and simultaneously expanding into mobile development

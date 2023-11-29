@@ -8,9 +8,47 @@ import { cn } from '~/lib/utils'
 
 import { DockItem } from './parts/dock-item'
 
-const Dock = () => {
+type DockProps = {
+  isMobile: boolean
+}
+
+const iconStyles = 'h-full w-full'
+
+const dockItems = [
+  {
+    href: ROUTES.home,
+    icon: <HomeIcon className={iconStyles} />,
+    tooltip: 'home',
+    shortcut: '1',
+  },
+  {
+    href: ROUTES.about,
+    icon: <UserIcon className={iconStyles} />,
+    tooltip: 'about',
+    shortcut: '2',
+  },
+  {
+    href: ROUTES.resources,
+    icon: <FolderClosedIcon className={iconStyles} />,
+    tooltip: 'resources',
+    shortcut: '3',
+  },
+  {
+    href: ROUTES.tools,
+    icon: <WrenchIcon className={iconStyles} />,
+    tooltip: 'tools',
+    shortcut: '4',
+  },
+  {
+    href: ROUTES.notes,
+    icon: <PencilIcon className={iconStyles} />,
+    tooltip: 'notes',
+    shortcut: '5',
+  },
+]
+
+const Dock = ({ isMobile }: DockProps) => {
   const mouseX = useMotionValue(Infinity)
-  const iconStyles = 'h-full w-full'
 
   return (
     <footer className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2">
@@ -26,41 +64,17 @@ const Dock = () => {
           aria-hidden="true"
           className="absolute -top-px left-1/2 h-px w-4/5 -translate-x-1/2 bg-linear-gradient opacity-60"
         />
-        <DockItem
-          href={ROUTES.home}
-          icon={<HomeIcon className={iconStyles} />}
-          tooltip="home"
-          shortcut="1"
-          mouseX={mouseX}
-        />
-        <DockItem
-          href={ROUTES.about}
-          icon={<UserIcon className={iconStyles} />}
-          tooltip="about"
-          shortcut="2"
-          mouseX={mouseX}
-        />
-        <DockItem
-          href={ROUTES.resources}
-          icon={<FolderClosedIcon className={iconStyles} />}
-          tooltip="resources"
-          shortcut="3"
-          mouseX={mouseX}
-        />
-        <DockItem
-          href={ROUTES.tools}
-          icon={<WrenchIcon className={iconStyles} />}
-          tooltip="tools"
-          shortcut="4"
-          mouseX={mouseX}
-        />
-        <DockItem
-          href={ROUTES.notes}
-          icon={<PencilIcon className={iconStyles} />}
-          tooltip="notes"
-          shortcut="5"
-          mouseX={mouseX}
-        />
+        {dockItems.map((dockItem) => (
+          <DockItem
+            key={dockItem.shortcut}
+            href={dockItem.href}
+            icon={dockItem.icon}
+            tooltip={dockItem.tooltip}
+            shortcut={dockItem.shortcut}
+            mouseX={mouseX}
+            isMobile={isMobile}
+          />
+        ))}
       </ul>
     </footer>
   )

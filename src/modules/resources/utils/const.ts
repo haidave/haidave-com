@@ -264,7 +264,7 @@ const RESOURCES: Resource[] = [
   },
   {
     name: 'Lusion',
-    description: 'Probably the best website I have ever seen.',
+    description: `Probably the best website I've ever seen.`,
     url: 'https://lusion.co/',
     category: 'Websites',
     subcategory: 'Immersive',

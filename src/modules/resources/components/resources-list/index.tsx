@@ -36,8 +36,8 @@ export default function ResourcesList() {
   )
 
   return (
-    <div className="mt-6 grid gap-6">
-      <div className="-ml-4 flex flex-wrap gap-2 px-4">
+    <div className="mt-6 grid">
+      <div className="-ml-4 flex gap-2 overflow-x-auto px-4 pb-3">
         {CATEGORIES.map((category) => {
           const isSelectedCategory =
             searchParams.getAll('category').includes(category) ||
@@ -70,7 +70,7 @@ export default function ResourcesList() {
         })}
       </div>
 
-      <div className="flex-1">
+      <div className="mt-3 flex-1">
         <ul className="grid grid-cols-1 gap-3 min-[450px]:grid-cols-2 sm:grid-cols-3">
           <AnimatePresence initial={false}>
             {filteredResources.map((resource) => (

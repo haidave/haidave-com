@@ -26,7 +26,7 @@ const ResourceCard = ({ resource }: ResourceCardProps) => {
 
       <div className="px-4 pb-4 pt-3">
         <p>{resource.name}</p>
-        <p className="line-clamp-2 text-xs text-secondary">{resource.description}</p>
+        <p className="line-clamp-2 text-sm text-secondary sm:text-xs">{resource.description}</p>
       </div>
 
       <div className="mt-auto flex items-center justify-between px-4 pb-4 pt-2">

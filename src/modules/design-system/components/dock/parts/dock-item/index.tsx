@@ -13,9 +13,10 @@ type DockItemProps = {
   tooltip: string
   shortcut: string
   mouseX: MotionValue
+  isMobile: boolean
 }
 
-const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mouseX }) => {
+const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mouseX, isMobile }) => {
   const router = useRouter()
   const pathname = usePathname()
   const isActive = pathname === href || pathname.startsWith(`${href}/`)
@@ -58,7 +59,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
           <TooltipTrigger asChild>
             <motion.button
               ref={ref}
-              style={{ width }}
+              style={!isMobile ? { width } : undefined}
               animate={controls}
               transition={{
                 default: {
@@ -73,7 +74,8 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
               whileTap={{ scale: isActive ? 1 : 0.8 }}
               className={cn(
                 'relative grid aspect-square w-10 place-items-center rounded-full bg-secondary',
-                'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0'
+                'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0',
+                'select-none'
               )}
               onMouseEnter={() => setIsTooltipOpen(true)}
               onMouseLeave={() => setIsTooltipOpen(false)}
