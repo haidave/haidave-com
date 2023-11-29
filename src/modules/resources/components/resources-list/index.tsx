@@ -37,7 +37,7 @@ export default function ResourcesList() {
 
   return (
     <div className="mt-6 grid gap-6">
-      <div className="-ml-4 flex flex-wrap justify-center gap-2 px-4 min-[450px]:justify-start ">
+      <div className="-ml-4 flex flex-wrap gap-2 px-4">
         {CATEGORIES.map((category) => {
           const isSelectedCategory =
             searchParams.getAll('category').includes(category) ||
@@ -74,7 +74,16 @@ export default function ResourcesList() {
         <ul className="grid grid-cols-1 gap-3 min-[450px]:grid-cols-2 sm:grid-cols-3">
           <AnimatePresence initial={false}>
             {filteredResources.map((resource) => (
-              <ResourceCard key={resource.name} resource={resource} />
+              <motion.li
+                layout
+                key={resource.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1, transition: { delay: 0.2 } }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ opacity: { duration: 0.2 } }}
+              >
+                <ResourceCard resource={resource} />
+              </motion.li>
             ))}
           </AnimatePresence>
         </ul>

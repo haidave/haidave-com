@@ -6,9 +6,10 @@ type LinkProps = {
   href: string
   isExternal?: boolean
   children: React.ReactNode
+  className?: string
 }
 
-export const Link = ({ href, isExternal, children }: LinkProps) => {
+export const Link = ({ href, isExternal, children, className }: LinkProps) => {
   const target = isExternal ? '_blank' : undefined
   const rel = isExternal ? 'noopener noreferrer' : undefined
 
@@ -21,7 +22,8 @@ export const Link = ({ href, isExternal, children }: LinkProps) => {
         'relative border-b-[1.5px] border-[#7e7e7e] pb-[1px]',
         'transition-colors duration-500 ease-in-out',
         'hover:border-[#ededed] focus-visible:shadow-focus focus-visible:outline-0',
-        isExternal ? 'pr-2' : null
+        isExternal ? 'pr-2' : null,
+        className
       )}
     >
       {children}

@@ -451,6 +451,13 @@ const RESOURCES: Resource[] = [
     category: 'People',
     subcategory: 'Designers',
   },
+  {
+    name: 'AuthKit',
+    description: 'Clean & polished landing page with great animations.',
+    url: 'https://www.authkit.com/',
+    category: 'Websites',
+    subcategory: 'Polished',
+  },
 ]
 
 export { CATEGORIES, SUBCATEGORIES, RESOURCES }

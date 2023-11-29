@@ -7,7 +7,7 @@ const SectionContainer = ({ children }: SectionContainerProps) => {
 }
 
 const SectionContent = ({ children }: SectionContainerProps) => {
-  return <div className="grid gap-14">{children}</div>
+  return <div className="grid gap-12">{children}</div>
 }
 
 const SectionTitle = ({ children }: SectionContainerProps) => {

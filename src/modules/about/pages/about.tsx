@@ -93,12 +93,12 @@ const AboutPage = () => {
               <li>Typescript</li>
               <li>Vercel</li>
 
-              <li>Prisma</li>
-              <li>Supabase, Planetscale</li>
+              <li>React Native, Expo</li>
+              <li>Firebase, Supabase</li>
               <li>NextAuth, Clerk</li>
 
               <li>styled-components, Tailwind CSS</li>
-              <li>GSAP, Framer Motion</li>
+              <li>Framer Motion, Reanimated</li>
               <li>Storybook</li>
             </ul>
           </Section.Block>

@@ -15,7 +15,7 @@ import {
 export const tools = [
   {
     name: 'Apple Notes',
-    description: 'Notion is too slow.',
+    description: 'Because Notion is too slow.',
     link: 'https://www.icloud.com/notes',
     logo: appleNotesLogo,
   },
@@ -51,7 +51,7 @@ export const tools = [
   },
   {
     name: 'Raycast',
-    description: 'Spotlight on steroids with AI.',
+    description: 'Spotlight on steroids powered by AI.',
     link: 'https://www.raycast.com/',
     logo: raycastLogo,
   },

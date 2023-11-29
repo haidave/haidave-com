@@ -30,6 +30,8 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
         router.push(href)
         void controls.start(() => ({ translateY: [0, -30, 0] }))
       }
+
+      ref.current?.blur()
     }
 
     window.addEventListener('keypress', handleKeyPress)
