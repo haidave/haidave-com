@@ -11,13 +11,13 @@ const NoteLayout = ({ children }: { children: React.ReactNode }) => {
       <Link
         href={ROUTES.notes}
         className={cn(
-          'fixed -ml-28 text-secondary transition',
+          'text-secondary transition lg:fixed lg:-ml-28',
           'hover:text-primary focus-visible:shadow-focus focus-visible:outline-0'
         )}
       >
-        <div className="flex items-center gap-2 text-sm">
+        <div className="mb-8 flex items-center gap-2 text-sm lg:mb-auto">
           <CornerUpLeftIcon size={18} />
-          Back
+          Notes
         </div>
       </Link>
       {children}
