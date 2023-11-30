@@ -32,10 +32,10 @@ const NotesPage = () => {
               <div className="flex items-center justify-between">
                 <div className="mr-8 grid gap-1 pr-8">
                   <h2 className="font-bold">{note.title}</h2>
-                  <p className="text-sm text-secondary">{note.description}</p>
+                  <p className="line-clamp-2 text-sm text-secondary">{note.description}</p>
                   <span className="text-xs text-tertiary">{format(parseISO(note.publishedAt), 'LLL d, yyyy')}</span>
                 </div>
-                <span className="opacity-0 group-hover:opacity-100">
+                <span className="shrink-0 md:opacity-0 md:group-hover:opacity-100">
                   <ArrowRightIcon size={18} />
                 </span>
               </div>
