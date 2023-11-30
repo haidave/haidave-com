@@ -1,4 +1,5 @@
 import { headers } from 'next/headers'
+import { Analytics } from '@vercel/analytics/react'
 
 import { Dock } from '~/modules/design-system/components/dock'
 import { inter } from '~/modules/design-system/theme/fonts'
@@ -20,6 +21,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className="bg-primary text-primary">
         <main>{children}</main>
         <Dock isMobile={isMobile} />
+        <Analytics />
       </body>
     </html>
   )
