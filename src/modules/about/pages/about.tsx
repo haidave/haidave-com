@@ -19,10 +19,13 @@ const AboutPage = () => {
           <Section.Description>
             Obsessed with building pixel-perfect and polished interfaces that are also accessible and intuitive.
             Currently working at{' '}
-            <Link href="https://www.strv.com/" isExternal>
+            <Link
+              href="https://www.strv.com/"
+              isExternal
+              className='relative after:absolute after:right-[-5px] after:content-["."]'
+            >
               STRV
             </Link>
-            .
           </Section.Description>
         </div>
 
@@ -41,7 +44,7 @@ const AboutPage = () => {
               </p>
               <p>
                 When I&apos;m not coding, I enjoy exploring new ideas and concepts related to health, productivity, and
-                self-development. Check out my <Link href={ROUTES.notes}>notes</Link> for more.
+                self&#8209;development. Check out my <Link href={ROUTES.notes}>notes</Link> for more.
               </p>
             </div>
           </Section.Block>
@@ -54,7 +57,7 @@ const AboutPage = () => {
               <li className="flex items-baseline gap-4">
                 <span className="w-[5.625rem] shrink-0 text-sm text-tertiary">2021-present</span>
                 <div className="grid gap-1">
-                  <p>
+                  <p className="max-[350px]:text-sm">
                     Frontend Engineer at{' '}
                     <Link href="https://www.strv.com/" isExternal>
                       STRV
@@ -69,10 +72,10 @@ const AboutPage = () => {
               <li className="flex items-baseline gap-4">
                 <span className="w-[5.625rem] shrink-0 text-sm text-tertiary">2018-2021</span>
                 <div className="grid gap-1">
-                  <p>
+                  <p className="max-[350px]:text-sm">
                     Creative Coder at{' '}
                     <Link href="https://www.dentsucreative.com/location/prague" isExternal>
-                      Dentsu Creative CZ
+                      Dentsu&nbsp;Creative&nbsp;CZ
                     </Link>
                   </p>
                   <p className="text-sm text-secondary">
@@ -88,7 +91,7 @@ const AboutPage = () => {
         <div>
           <Section.Subtitle>Stack</Section.Subtitle>
           <Section.Block>
-            <ul className="grid grid-cols-3 gap-x-12 gap-y-4 text-secondary">
+            <ul className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm text-secondary min-[400px]:grid-cols-3 sm:text-base">
               <li>React, Next.js</li>
               <li>Typescript</li>
               <li>Vercel</li>
@@ -110,7 +113,7 @@ const AboutPage = () => {
             <div className="grid gap-4">
               <p>
                 This site represents me and my work and allows me to experiment with new technologies and design trends,
-                while staying up-to-date with the latest industry best practices.
+                while staying up&#8209;to&#8209;date with the latest industry best practices.
               </p>
               <p>
                 One of the main purposes of this site is to serve as a personal accountability tool for me, as well as a

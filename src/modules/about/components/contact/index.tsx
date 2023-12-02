@@ -29,9 +29,9 @@ const Contact = () => {
             <CopyIcon size={16} /> Copy
           </button>
         </div>
-        <div className="flex justify-between border-t border-[#232323] py-4">
+        <div className="flex justify-between gap-4 border-t border-[#232323] py-4">
           <p>Stay in touch</p>
-          <div className="inline-block space-x-4">
+          <div className="grid justify-items-end gap-4 min-[420px]:flex">
             <Link href="https://twitter.com/haidave_" isExternal>
               Twitter
             </Link>

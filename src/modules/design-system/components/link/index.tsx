@@ -31,9 +31,8 @@ export const Link = ({ href, isExternal, children, className }: LinkProps) => {
       target={target}
       rel={rel}
       className={cn(
-        'relative inline-flex items-center gap-px border-b-[1.5px] border-[#7e7e7e] pb-[1px]',
-        'transition-colors duration-500 ease-in-out',
-        'hover:border-[#ededed] focus-visible:shadow-focus focus-visible:outline-0',
+        'group relative inline-flex items-center',
+        'focus-visible:shadow-focus focus-visible:outline-0',
         className
       )}
       whileHover="show"
@@ -41,6 +40,16 @@ export const Link = ({ href, isExternal, children, className }: LinkProps) => {
     >
       {children}
       {isExternal ? <ExternalLinkIcon variants={iconVariants} /> : null}
+      <>
+        <span className={cn('absolute -bottom-px left-1/2 h-[1.5px] w-full -translate-x-1/2 bg-[#7e7e7e]')} />
+        <span
+          className={cn(
+            'absolute -bottom-px left-1/2 h-[1.5px] w-0 -translate-x-1/2 bg-[#ededed]',
+            'origin-center transition-all duration-500 ease-in-out',
+            'group-hover:w-full'
+          )}
+        />
+      </>
     </MotionLink>
   )
 }

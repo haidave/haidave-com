@@ -9,10 +9,13 @@ const HomePage = () => {
       <Section.Title>Heyo, welcome!</Section.Title>
       <Section.Description>
         I&apos;m Dave &mdash; a Frontend Engineer at{' '}
-        <Link href="https://www.strv.com/" isExternal>
+        <Link
+          href="https://www.strv.com/"
+          isExternal
+          className='relative after:absolute after:right-[-5px] after:content-["."]'
+        >
           STRV
         </Link>
-        .
       </Section.Description>
 
       <HomePageContent />
