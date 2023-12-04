@@ -1,6 +1,8 @@
 'use client'
 
+import { type MouseEvent } from 'react'
 import Link from 'next/link'
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { ExternalLinkIcon } from 'lucide-react'
 
 import { cn } from '~/lib/utils'
@@ -12,17 +14,34 @@ type ResourceCardProps = {
 }
 
 const ResourceCard = ({ resource }: ResourceCardProps) => {
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+
+  const handleMouseMove = ({ currentTarget, clientX, clientY }: MouseEvent) => {
+    const { left, top } = currentTarget.getBoundingClientRect()
+
+    mouseX.set(clientX - left)
+    mouseY.set(clientY - top)
+  }
+
   return (
     <Link
       href={resource.url}
       target="_blank"
       className={cn(
-        'relative flex h-full flex-col justify-between rounded-xl border ',
+        'group relative flex h-full flex-col justify-between rounded-xl border',
         'transition-colors duration-300 ease-in-out',
-        'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0'
+        'focus-visible:shadow-focus focus-visible:outline-0'
       )}
+      onMouseMove={handleMouseMove}
     >
-      {/* <div className="h-24 w-full rounded-t-xl bg-black" /> */}
+      <motion.div
+        className="pointer-events-none absolute -inset-px -z-10 rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          background: useMotionTemplate`radial-gradient(200px circle at ${mouseX}px ${mouseY}px, #232323, transparent 80%)`,
+        }}
+        aria-hidden
+      />
 
       <div className="px-4 pb-4 pt-3">
         <p>{resource.name}</p>

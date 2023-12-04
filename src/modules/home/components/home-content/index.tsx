@@ -125,7 +125,7 @@ const HomePageContent = () => {
             ))}
           </ul>
 
-          <Link href={ROUTES.resources} className="mt-3 justify-self-end text-sm">
+          <Link href={ROUTES.resources} className="mt-4 justify-self-end text-sm">
             View All
           </Link>
         </motion.div>
@@ -141,7 +141,7 @@ const HomePageContent = () => {
             ))}
           </ul>
 
-          <Link href={ROUTES.tools} className="mt-3 justify-self-end text-sm">
+          <Link href={ROUTES.tools} className="mt-4 justify-self-end text-sm">
             View All
           </Link>
         </motion.div>
