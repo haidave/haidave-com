@@ -8,6 +8,9 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  experimental: {
+    scrollRestoration: true,
+  },
 }
 
 module.exports = withContentlayer(nextConfig)

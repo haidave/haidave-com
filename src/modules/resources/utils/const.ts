@@ -131,7 +131,7 @@ const RESOURCES: Resource[] = [
   },
   {
     name: 'Pedro Duarte',
-    description: 'DX Engineer at Raycast. Radix UI & Stitches.',
+    description: 'DX Engineer at Raycast. Radix UI & Stitches. New website.',
     url: 'https://ped.ro/',
     category: 'People',
     subcategory: 'Developers',
@@ -159,7 +159,7 @@ const RESOURCES: Resource[] = [
   },
   {
     name: 'Tremor',
-    description: 'Build dashboards fast with Tailwind CSS.',
+    description: 'Build dashboards & charts fast with Tailwind CSS.',
     url: 'https://www.tremor.so/',
     category: 'Libraries',
     subcategory: 'User Interface',
@@ -457,6 +457,14 @@ const RESOURCES: Resource[] = [
     url: 'https://www.authkit.com/',
     category: 'Websites',
     subcategory: 'Polished',
+  },
+  // EmblaCarousel is a lightweight (6.3kb min+gzipped), 100% open source, library agnostic carousel library with fluid motion and supports swipe gestures. It also does not have any dependencies on other libraries.
+  {
+    name: 'Embla Carousel',
+    description: 'Lightweight, open source, unstyled, swipe gestures.',
+    url: 'https://www.embla-carousel.com',
+    category: 'Libraries',
+    subcategory: 'User Interface',
   },
 ]
 

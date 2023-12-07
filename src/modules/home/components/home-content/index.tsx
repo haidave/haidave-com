@@ -8,33 +8,10 @@ import { ROUTES } from '~/config/routes'
 import { cn } from '~/lib/utils'
 import { Link } from '~/modules/design-system/components/link'
 import { Section } from '~/modules/design-system/components/section'
-import { ResourceCard } from '~/modules/resources/components/resource-card'
 import { arcLogo, raycastLogo, vsCodeLogo } from '~/modules/tools/assets'
 import { ToolListItem } from '~/modules/tools/components/tools-list/parts/tools-list-item'
 
-const homePageResources = [
-  {
-    name: 'Lusion',
-    description: `Probably the best website I've ever seen.`,
-    url: 'https://lusion.co/',
-    category: 'Websites',
-    subcategory: 'Immersive',
-  },
-  {
-    name: 'Vaul',
-    description: 'Mobile-friendly drawer component for React.',
-    url: 'https://vaul.emilkowal.ski/',
-    category: 'Libraries',
-    subcategory: 'User Interface',
-  },
-  {
-    name: 'Learn Next.js',
-    description: 'Learn foundations of Next.js with latest features.',
-    url: 'https://nextjs.org/learn',
-    category: 'Websites',
-    subcategory: 'Learning',
-  },
-]
+import { HomeLatestResources } from '../home-latest-resources'
 
 const homePageTools = [
   {
@@ -119,11 +96,7 @@ const HomePageContent = () => {
             <p>Check out recently added gems in my curated collection.</p>
           </Section.Block>
 
-          <ul className="mt-6 grid grid-cols-1 gap-3 min-[450px]:grid-cols-2 sm:grid-cols-3">
-            {homePageResources.map((resource) => (
-              <ResourceCard key={resource.name} resource={resource} />
-            ))}
-          </ul>
+          <HomeLatestResources />
 
           <Link href={ROUTES.resources} className="mt-4 justify-self-end text-sm">
             View All
