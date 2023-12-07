@@ -2,6 +2,7 @@
 
 import NextLink from 'next/link'
 import { motion } from 'framer-motion'
+import { useAppContext } from '~/context/app-context-provider'
 
 import { cn } from '~/lib/utils'
 
@@ -17,11 +18,12 @@ type LinkProps = {
 const MotionLink = motion(NextLink)
 
 export const Link = ({ href, isExternal, children, className }: LinkProps) => {
+  const { isMobile } = useAppContext()
   const target = isExternal ? '_blank' : undefined
   const rel = isExternal ? 'noopener noreferrer' : undefined
 
   const iconVariants = {
-    hide: { pathLength: 0.7 },
+    hide: { pathLength: isMobile ? 1 : 0.7 },
     show: { pathLength: 1 },
   }
 

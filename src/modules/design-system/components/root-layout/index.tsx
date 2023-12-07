@@ -5,6 +5,7 @@ import { Dock } from '~/modules/design-system/components/dock'
 import { inter } from '~/modules/design-system/theme/fonts'
 
 import '~/styles/globals.css'
+import { AppContextProvider } from '~/context/app-context-provider'
 
 export const metadata = {
   title: 'haidave.com',
@@ -19,8 +20,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="bg-primary text-primary">
-        <main>{children}</main>
-        <Dock isMobile={isMobile} />
+        <AppContextProvider initialState={{ isMobile }}>
+          <main>{children}</main>
+          <Dock />
+        </AppContextProvider>
         <Analytics />
       </body>
     </html>

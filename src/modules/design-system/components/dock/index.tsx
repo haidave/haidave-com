@@ -2,15 +2,12 @@
 
 import { useMotionValue } from 'framer-motion'
 import { FolderClosedIcon, HomeIcon, PencilIcon, UserIcon, WrenchIcon } from 'lucide-react'
+import { useAppContext } from '~/context/app-context-provider'
 
 import { ROUTES } from '~/config/routes'
 import { cn } from '~/lib/utils'
 
 import { DockItem } from './parts/dock-item'
-
-type DockProps = {
-  isMobile: boolean
-}
 
 const iconStyles = 'h-full w-full'
 
@@ -47,7 +44,8 @@ const dockItems = [
   },
 ]
 
-const Dock = ({ isMobile }: DockProps) => {
+const Dock = () => {
+  const { isMobile } = useAppContext()
   const mouseX = useMotionValue(Infinity)
 
   return (

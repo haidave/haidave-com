@@ -38,7 +38,7 @@ const ResourceCard = ({ resource }: ResourceCardProps) => {
       <motion.div
         className="pointer-events-none absolute -inset-px -z-10 rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
-          background: useMotionTemplate`radial-gradient(200px circle at ${mouseX}px ${mouseY}px, #232323, transparent 80%)`,
+          background: useMotionTemplate`radial-gradient(250px circle at ${mouseX}px ${mouseY}px, #232323, transparent 80%)`,
         }}
         aria-hidden
       />
