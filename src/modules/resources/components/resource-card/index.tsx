@@ -29,7 +29,7 @@ const ResourceCard = ({ resource }: ResourceCardProps) => {
       href={resource.url}
       target="_blank"
       className={cn(
-        'group relative flex h-full flex-col justify-between rounded-xl border',
+        'group relative flex h-full select-none flex-col justify-between rounded-xl border',
         'transition-colors duration-300 ease-in-out',
         'focus-visible:shadow-focus focus-visible:outline-0'
       )}
