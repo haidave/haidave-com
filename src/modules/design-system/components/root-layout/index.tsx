@@ -1,4 +1,3 @@
-import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/react'
 
 import { Dock } from '~/modules/design-system/components/dock'
@@ -13,9 +12,7 @@ export const metadata = {
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  const headersList = headers()
-  const userAgent = headersList.get('user-agent')
-  const isMobile = Boolean(userAgent?.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i))
+  const isMobile = false
 
   return (
     <html lang="en" className={`${inter.variable}`}>
