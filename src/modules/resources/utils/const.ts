@@ -466,6 +466,13 @@ const RESOURCES: Resource[] = [
     category: 'Libraries',
     subcategory: 'User Interface',
   },
+  {
+    name: 'nivo',
+    description: 'Set of data visualizations built with React + D3.',
+    url: 'https://nivo.rocks/',
+    category: 'Libraries',
+    subcategory: 'User Interface',
+  },
 ]
 
 export { CATEGORIES, SUBCATEGORIES, RESOURCES }

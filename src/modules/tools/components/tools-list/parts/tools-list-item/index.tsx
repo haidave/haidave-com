@@ -24,7 +24,7 @@ const ToolListItem = ({ tool, index }: ToolListItemProps) => {
           'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0'
         )}
       >
-        {tool.logo ? <Image src={tool.logo} alt={tool.name} width={32} height={32} /> : null}
+        <Image src={tool.logo} alt={tool.name} width={32} height={32} />
         <div className={cn('grid w-full items-center py-4', index !== 0 ? 'border-t border-[#232323]' : '')}>
           <p>{tool.name}</p>
           <p className="text-sm text-secondary">{tool.description}</p>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { motion, useAnimationControls, useSpring, useTransform, type MotionValue } from 'framer-motion'
 
@@ -50,46 +51,49 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
     <motion.li
       className="relative"
       onClick={() => {
-        router.push(href)
         void controls.start(() => ({ translateY: [0, -30, 0] }))
       }}
     >
       <TooltipProvider delayDuration={200}>
         <Tooltip defaultOpen={false}>
           <TooltipTrigger asChild>
-            <motion.button
-              ref={ref}
-              style={!isMobile ? { width } : undefined}
-              animate={controls}
-              transition={{
-                default: {
-                  duration: 0.2,
-                },
-                translateY: {
-                  duration: 0.4,
-                  ease: 'easeInOut',
-                  times: [0, 0.5, 1],
-                },
-              }}
-              whileTap={{ scale: isActive ? 1 : 0.8 }}
-              className={cn(
-                'relative grid aspect-square w-10 place-items-center rounded-full bg-secondary',
-                'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0',
-                'select-none'
-              )}
-              onMouseEnter={() => setIsTooltipOpen(true)}
-              onMouseLeave={() => setIsTooltipOpen(false)}
-            >
-              <div
-                aria-hidden="true"
-                className="absolute -top-px -z-10 h-full w-full rounded-full bg-linear-gradient-subtle"
-              />
-              {/* Hotfix to cover the linear gradient div which glitches on click*/}
-              <div aria-hidden="true" className="absolute top-0 -z-10 h-full w-full rounded-full bg-tertiary" />
-              <div className={cn('grid h-1/2 w-1/2 place-items-center', isActive ? 'text-secondary' : 'text-tertiary')}>
-                {icon}
-              </div>
-            </motion.button>
+            <Link href={href}>
+              <motion.button
+                ref={ref}
+                style={!isMobile ? { width } : undefined}
+                animate={controls}
+                transition={{
+                  default: {
+                    duration: 0.2,
+                  },
+                  translateY: {
+                    duration: 0.4,
+                    ease: 'easeInOut',
+                    times: [0, 0.5, 1],
+                  },
+                }}
+                whileTap={{ scale: isActive ? 1 : 0.8 }}
+                className={cn(
+                  'relative grid aspect-square w-10 place-items-center rounded-full bg-secondary',
+                  'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0',
+                  'select-none'
+                )}
+                onMouseEnter={() => setIsTooltipOpen(true)}
+                onMouseLeave={() => setIsTooltipOpen(false)}
+              >
+                <div
+                  aria-hidden="true"
+                  className="absolute -top-px -z-10 h-full w-full rounded-full bg-linear-gradient-subtle"
+                />
+                {/* Hotfix to cover the linear gradient div which glitches on click*/}
+                <div aria-hidden="true" className="absolute top-0 -z-10 h-full w-full rounded-full bg-tertiary" />
+                <div
+                  className={cn('grid h-1/2 w-1/2 place-items-center', isActive ? 'text-secondary' : 'text-tertiary')}
+                >
+                  {icon}
+                </div>
+              </motion.button>
+            </Link>
           </TooltipTrigger>
           {isTooltipOpen ? (
             <TooltipContent>
