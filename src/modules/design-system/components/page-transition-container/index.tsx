@@ -6,10 +6,10 @@ import { motion } from 'framer-motion'
 const PageTransitionContainer = ({ children }: PropsWithChildren) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ ease: 'easeOut' }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
     >
       {children}
     </motion.div>
