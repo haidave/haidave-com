@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { Dock } from '~/modules/design-system/components/dock'
 import { inter } from '~/modules/design-system/theme/fonts'
@@ -17,6 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <main>{children}</main>
         <Dock />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
