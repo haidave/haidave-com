@@ -2,14 +2,17 @@
 
 import { motion } from 'framer-motion'
 
+import { cn } from '~/lib/utils'
+
 type ExternalLinkIconProps = {
-  variants: {
+  variants?: {
     hide: { pathLength: number }
     show: { pathLength: number }
   }
+  className?: string
 }
 
-const ExternalLinkIcon = ({ variants }: ExternalLinkIconProps) => {
+const ExternalLinkIcon = ({ variants, className }: ExternalLinkIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +24,7 @@ const ExternalLinkIcon = ({ variants }: ExternalLinkIconProps) => {
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="-mt-0.5"
+      className={cn('-mt-0.5', className)}
     >
       <path d="M13 5H19V11" />
       <motion.path d="M19 5L5 19" variants={variants} transition={{ duration: 0.5 }} />

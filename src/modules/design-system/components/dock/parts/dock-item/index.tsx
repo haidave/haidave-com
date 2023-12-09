@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { motion, useAnimationControls, useSpring, useTransform, type MotionValue } from 'framer-motion'
 
-import { cn } from '~/lib/utils'
+import { cn, isTouchDevice } from '~/lib/utils'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '~/modules/design-system/components/tooltip'
 
 type DockItemProps = {
@@ -14,17 +14,22 @@ type DockItemProps = {
   tooltip: string
   shortcut: string
   mouseX: MotionValue
-  isMobile: boolean
 }
 
-const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mouseX, isMobile }) => {
+const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mouseX }) => {
   const router = useRouter()
   const pathname = usePathname()
   const isActive = pathname === href || pathname.startsWith(`${href}/`)
-  const [isTooltipOpen, setIsTooltipOpen] = useState(false)
-
   const ref = useRef<HTMLButtonElement>(null)
   const controls = useAnimationControls()
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  useEffect(() => {
+    if (!isTouchDevice) {
+      setIsAnimating(true)
+    }
+  }, [])
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -45,7 +50,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
     return val - bounds.x - bounds.width / 2
   })
   const widthSync = useTransform(distance, [-100, 0, 100], [40, 80, 40])
-  const width = useSpring(widthSync, { damping: 12, mass: 0.1, stiffness: 120 })
+  const animatedWidth = useSpring(widthSync, { damping: 12, mass: 0.1, stiffness: 120 })
 
   return (
     <motion.li
@@ -60,7 +65,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
             <Link href={href}>
               <motion.button
                 ref={ref}
-                style={!isMobile ? { width } : undefined}
+                style={{ width: isAnimating ? animatedWidth : undefined }}
                 animate={controls}
                 transition={{
                   default: {
