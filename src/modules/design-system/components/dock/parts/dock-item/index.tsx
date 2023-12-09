@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { motion, useAnimationControls, useSpring, useTransform, type MotionValue } from 'framer-motion'
 
-import { cn, isTouchDevice } from '~/lib/utils'
+import { cn } from '~/lib/utils'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '~/modules/design-system/components/tooltip'
 
 type DockItemProps = {
@@ -26,6 +26,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
   const [isAnimating, setIsAnimating] = useState(false)
 
   useEffect(() => {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
     if (!isTouchDevice) {
       setIsAnimating(true)
     }

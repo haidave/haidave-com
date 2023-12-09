@@ -13,6 +13,4 @@ const copyToClipboard = async (text: string) => {
   }
 }
 
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
-
-export { cn, copyToClipboard, isTouchDevice }
+export { cn, copyToClipboard }
