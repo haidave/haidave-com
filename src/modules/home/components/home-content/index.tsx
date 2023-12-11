@@ -68,7 +68,7 @@ const HomePageContent = () => {
             animate={{ opacity: 1, scale: 1, transition: { delay: 0.2 } }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ opacity: { duration: 0.2 } }}
-            className="relative hidden items-center gap-4 rounded-xl border p-4 pr-6 text-xs text-secondary lg:flex"
+            className="relative hidden items-center gap-4 rounded-xl border p-4 pr-6 font-mono text-xs text-secondary lg:flex"
           >
             <LightbulbIcon />
             <div>

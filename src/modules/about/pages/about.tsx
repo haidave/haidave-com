@@ -86,7 +86,7 @@ const AboutPage = () => {
           <div>
             <Section.Subtitle>Stack</Section.Subtitle>
             <Section.Block>
-              <ul className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm text-secondary min-[400px]:grid-cols-3 sm:text-base">
+              <ul className="grid grid-cols-2 gap-x-12 gap-y-4 font-mono text-sm text-secondary min-[400px]:grid-cols-3 sm:text-base">
                 <li>React, Next.js</li>
                 <li>Typescript</li>
                 <li>Vercel</li>
