@@ -20,7 +20,8 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
   const router = useRouter()
   const pathname = usePathname()
   const isActive = pathname === href || pathname.startsWith(`${href}/`)
-  const ref = useRef<HTMLDivElement>(null)
+  const divRef = useRef<HTMLDivElement>(null)
+  const anchorRef = useRef<HTMLAnchorElement>(null)
   const controls = useAnimationControls()
   const [isTooltipOpen, setIsTooltipOpen] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
@@ -39,14 +40,14 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
         void controls.start(() => ({ translateY: [0, -30, 0] }))
       }
 
-      ref.current?.blur()
+      anchorRef.current?.blur()
     }
 
     window.addEventListener('keypress', handleKeyPress)
   }, [router, href, shortcut, controls])
 
   const distance = useTransform(mouseX, (val) => {
-    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 }
+    const bounds = divRef.current?.getBoundingClientRect() ?? { x: 0, width: 0 }
 
     return val - bounds.x - bounds.width / 2
   })
@@ -63,9 +64,15 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
       <TooltipProvider delayDuration={200}>
         <Tooltip defaultOpen={false}>
           <TooltipTrigger asChild>
-            <Link href={href} aria-label={`Go to ${tooltip}`}>
+            <Link
+              href={href}
+              ref={anchorRef}
+              aria-label={`Go to ${tooltip}`}
+              className={cn('block rounded-full', 'focus-visible:shadow-focus focus-visible:outline-0')}
+            >
               <motion.div
-                ref={ref}
+                ref={divRef}
+                tabIndex={-1}
                 style={{ width: isAnimating ? animatedWidth : undefined }}
                 animate={controls}
                 transition={{
@@ -80,8 +87,8 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
                 }}
                 whileTap={{ scale: isActive ? 1 : 0.8 }}
                 className={cn(
-                  'relative grid aspect-square w-10 place-items-center rounded-full bg-secondary',
-                  'hover:bg-tertiary focus-visible:shadow-focus focus-visible:outline-0',
+                  'relative grid aspect-square w-10 place-items-center rounded-full bg-secondary transition-colors duration-300 ease-in-out',
+                  'hover:bg-tertiary focus-visible:shadow-none focus-visible:outline-none',
                   'select-none'
                 )}
                 onMouseEnter={() => setIsTooltipOpen(true)}
