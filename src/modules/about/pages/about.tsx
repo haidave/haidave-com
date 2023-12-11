@@ -1,15 +1,8 @@
-import type { Metadata } from 'next'
-
 import { ROUTES } from '~/config/routes'
 import { Contact } from '~/modules/about/components/contact'
 import { Link } from '~/modules/design-system/components/link'
 import { PageTransitionContainer } from '~/modules/design-system/components/page-transition-container'
 import { Section } from '~/modules/design-system/components/section'
-
-export const metadata: Metadata = {
-  title: 'About',
-  description: 'Get to know me better.',
-}
 
 const AboutPage = () => {
   return (

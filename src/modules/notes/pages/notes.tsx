@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { allNotes } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns'
@@ -7,11 +6,6 @@ import { ArrowRightIcon } from 'lucide-react'
 import { cn } from '~/lib/utils'
 import { PageTransitionContainer } from '~/modules/design-system/components/page-transition-container'
 import { Section } from '~/modules/design-system/components/section'
-
-export const metadata: Metadata = {
-  title: 'Notes',
-  description: 'Brain dumps, explorations and how-to guides.',
-}
 
 const NotesPage = () => {
   const notes = allNotes.sort((a, b) => compareDesc(new Date(a.publishedAt), new Date(b.publishedAt)))
