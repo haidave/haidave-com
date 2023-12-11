@@ -17,6 +17,7 @@
     --bg-secondary: #1c1c1c;
     --bg-tertiary: #232323;
     --overlay: rgba(0, 0, 0, 0.7);
+    --selection: #2c2c2c;
     --bg-linear-gradient: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0),
@@ -126,4 +127,8 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+::selection {
+  background-color: var(--selection);
 }
