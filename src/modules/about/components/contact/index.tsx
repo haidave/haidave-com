@@ -16,6 +16,7 @@ const Contact = () => {
           <span>E-mail</span>
           {/* TODO: Create Button component */}
           <button
+            aria-label="Copy e-mail to clipboard"
             onClick={() => {
               void copyToClipboard('dave@haidave.com')
               toast.success('Copied to clipboard')

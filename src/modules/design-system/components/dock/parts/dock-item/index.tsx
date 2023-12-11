@@ -20,7 +20,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
   const router = useRouter()
   const pathname = usePathname()
   const isActive = pathname === href || pathname.startsWith(`${href}/`)
-  const ref = useRef<HTMLButtonElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
   const controls = useAnimationControls()
   const [isTooltipOpen, setIsTooltipOpen] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
@@ -63,8 +63,8 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
       <TooltipProvider delayDuration={200}>
         <Tooltip defaultOpen={false}>
           <TooltipTrigger asChild>
-            <Link href={href}>
-              <motion.button
+            <Link href={href} aria-label={`Go to ${tooltip}`}>
+              <motion.div
                 ref={ref}
                 style={{ width: isAnimating ? animatedWidth : undefined }}
                 animate={controls}
@@ -98,7 +98,7 @@ const DockItem: React.FC<DockItemProps> = ({ href, icon, tooltip, shortcut, mous
                 >
                   {icon}
                 </div>
-              </motion.button>
+              </motion.div>
             </Link>
           </TooltipTrigger>
           {isTooltipOpen ? (

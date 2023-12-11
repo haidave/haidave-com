@@ -1,3 +1,4 @@
+import { type Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
@@ -6,9 +7,13 @@ import { inter } from '~/modules/design-system/theme/fonts'
 
 import '~/styles/globals.css'
 
-export const metadata = {
-  title: 'haidave.com',
-  description: 'Personal website',
+export const metadata: Metadata = {
+  metadataBase: new URL('https://leerob.io'),
+  title: {
+    default: 'Dave Nguyen',
+    template: '%s | Dave Nguyen',
+  },
+  description: 'Frontend Engineer at STRV.',
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

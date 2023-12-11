@@ -93,6 +93,7 @@ const HomeLatestResources = () => {
 
       {canScrollPrev ? (
         <button
+          aria-label="Scroll previous"
           onClick={() => {
             emblaApi?.scrollPrev()
           }}
@@ -109,6 +110,7 @@ const HomeLatestResources = () => {
 
       {canScrollNext ? (
         <button
+          aria-label="Scroll next"
           onClick={() => {
             emblaApi?.scrollNext()
           }}

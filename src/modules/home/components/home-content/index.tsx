@@ -76,6 +76,7 @@ const HomePageContent = () => {
               <p>Try pressing 2, 3, 4, 5 and then 1 to return here. Cool, right?</p>
             </div>
             <button
+              aria-label="Hide tip"
               onClick={handleHideTip}
               className="group ml-auto self-start hover:text-primary focus-visible:shadow-focus focus-visible:outline-0"
             >

@@ -8,7 +8,7 @@ import { Section } from '~/modules/design-system/components/section'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Frontend Developer at STRV.',
+  description: 'Get to know me better.',
 }
 
 const AboutPage = () => {
@@ -57,7 +57,7 @@ const AboutPage = () => {
             <Section.Block>
               <ul className="grid gap-4">
                 <li className="flex items-baseline gap-4">
-                  <span className="w-[5.625rem] shrink-0 text-sm text-tertiary">2021-present</span>
+                  <span className="w-[5.625rem] shrink-0 text-sm text-secondary">2021-present</span>
                   <div className="grid gap-1">
                     <p className="max-[350px]:text-sm">
                       Frontend Engineer at{' '}
@@ -72,7 +72,7 @@ const AboutPage = () => {
                   </div>
                 </li>
                 <li className="flex items-baseline gap-4">
-                  <span className="w-[5.625rem] shrink-0 text-sm text-tertiary">2018-2021</span>
+                  <span className="w-[5.625rem] shrink-0 text-sm text-secondary">2018-2021</span>
                   <div className="grid gap-1">
                     <p className="max-[350px]:text-sm">
                       Creative Coder at{' '}

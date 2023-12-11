@@ -49,7 +49,7 @@ const ResourceCard = ({ resource }: ResourceCardProps) => {
       </div>
 
       <div className="mt-auto flex items-center justify-between px-4 pb-4 pt-2">
-        <div className="grid h-6 place-items-center rounded-full bg-secondary px-3 text-xs text-tertiary">
+        <div className="grid h-6 place-items-center rounded-full bg-secondary px-3 text-xs text-secondary">
           {resource.subcategory}
         </div>
         <ExternalLinkIcon size={18} className="text-tertiary transition-colors duration-300 ease-in-out" />

@@ -25,7 +25,7 @@ const ToolListItem = ({ tool, index }: ToolListItemProps) => {
         )}
       >
         <div className="aspect-square w-8">
-          <Image src={tool.logo} alt={tool.name} width={32} height={32} priority placeholder="blur" />
+          <Image src={tool.logo} alt={tool.name} width={32} height={32} priority />
         </div>
         <div className={cn('grid w-full items-center py-4', index !== 0 ? 'border-t border-[#232323]' : '')}>
           <p>{tool.name}</p>
