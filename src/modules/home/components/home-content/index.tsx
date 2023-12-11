@@ -47,20 +47,10 @@ const HomePageContent = () => {
         <div className="grid gap-4">
           <p>
             Crafting polished web experiences with React & Next.js and simultaneously expanding into mobile development
-            by profiling in React Native & Expo.
-          </p>
-
-          <p>
-            I take great pride in my attention to detail, striving for pixel-perfect aesthetics, while always
-            prioritizing an intuitive and accessible user experience.
-          </p>
-
-          <p>
-            This site is more than just a portfolio &mdash; it&apos;s my digital craft station, where I&nbsp;can
-            investigate bleeding-edge technologies, experiment with new design trends and share my insights with the
-            world.
+            using React Native & Expo.
           </p>
         </div>
+
         {isTipHidden ? null : (
           <motion.div
             layout
@@ -91,6 +81,8 @@ const HomePageContent = () => {
             </button>
           </motion.div>
         )}
+
+        {/* Latest Inspirations */}
         <motion.div layout className="grid">
           <Section.Subtitle>Latest Inspirations</Section.Subtitle>
           <Section.Block>
@@ -103,6 +95,8 @@ const HomePageContent = () => {
             View All
           </Link>
         </motion.div>
+
+        {/* Everyday Essentials */}
         <motion.div layout className="grid">
           <Section.Subtitle>Everyday Essentials</Section.Subtitle>
           <Section.Block>
