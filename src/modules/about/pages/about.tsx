@@ -28,7 +28,7 @@ const AboutPage = () => {
             <Section.Subtitle>Me</Section.Subtitle>
             <Section.Block>
               <div className="grid gap-4">
-                <p>Hey, I&apos;m Dave, a Frontend Engineer based in Prague, Czech&nbsp;Republic.</p>
+                <p>Hey, I&apos;m Dave &mdash; a Frontend Engineer based in Prague, Czech&nbsp;Republic.</p>
                 <p>
                   My main focus is on creating interfaces that are both visually stunning and inclusive, yet simple and
                   functional.
