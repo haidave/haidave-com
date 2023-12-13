@@ -81,7 +81,7 @@ const HomeLatestResources = () => {
 
   return (
     <div className="relative mt-6 overflow-hidden lg:overflow-visible">
-      <div ref={emblaRef} className="overflow-hidden">
+      <div ref={emblaRef} className="cursor-grab overflow-hidden ">
         <ul className="flex gap-3">
           {homePageResources.map((resource) => (
             <li key={resource.name} className="min-w-0 max-w-[75%] shrink-0 grow-0 basis-full sm:max-w-[28%]">
