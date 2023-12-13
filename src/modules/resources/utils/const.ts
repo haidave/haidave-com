@@ -473,6 +473,13 @@ const RESOURCES: Resource[] = [
     category: 'Libraries',
     subcategory: 'User Interface',
   },
+  {
+    name: 'motion.ed',
+    description: 'Learn motion design principles for UI/UX.',
+    url: 'https://motion.zajno.com/',
+    category: 'Websites',
+    subcategory: 'Learning',
+  },
 ]
 
 export { CATEGORIES, SUBCATEGORIES, RESOURCES }
