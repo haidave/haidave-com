@@ -2,6 +2,7 @@ import { ROUTES } from '~/config/routes'
 import { Contact } from '~/modules/about/components/contact'
 import { Link } from '~/modules/design-system/components/link'
 import { PageTransitionContainer } from '~/modules/design-system/components/page-transition-container'
+import ScrambleText from '~/modules/design-system/components/scramble-text'
 import { Section } from '~/modules/design-system/components/section'
 
 const AboutPage = () => {
@@ -28,7 +29,10 @@ const AboutPage = () => {
             <Section.Subtitle>Me</Section.Subtitle>
             <Section.Block>
               <div className="grid gap-4">
-                <p>Hey, I&apos;m Dave &mdash; a Frontend Engineer based in Prague, Czech&nbsp;Republic.</p>
+                <p>
+                  Hey, I&apos;m <ScrambleText originalText="Dave" animatedText="Hai" /> &mdash; a Frontend Engineer
+                  based in Prague, Czech&nbsp;Republic.
+                </p>
                 <p>
                   My main focus is on creating interfaces that are both visually stunning and inclusive, yet simple and
                   functional.
