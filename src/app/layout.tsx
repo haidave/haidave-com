@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://haidave.com'),
   title: {
     default: 'haidave',
-    template: '%s | haidave',
+    template: 'haidave | %s',
   },
   description: 'Frontend Engineer at STRV.',
 }
