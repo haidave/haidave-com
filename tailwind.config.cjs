@@ -9,8 +9,8 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)'],
+        sans: ['var(--font-sans)'],
+        mono: ['var(--font-mono)'],
       },
       textColor: {
         primary: 'var(--text-primary)',
@@ -22,6 +22,7 @@ const config = {
         'primary-rgba': 'var(--bg-primary-rgba)',
         secondary: 'var(--bg-secondary)',
         tertiary: 'var(--bg-tertiary)',
+        border: 'var(--border-primary)',
       },
       backgroundImage: {
         'linear-gradient': 'var(--bg-linear-gradient)',

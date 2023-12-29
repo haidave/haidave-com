@@ -17,5 +17,6 @@
   },
   // Recommended typescript plugin from Next.js
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.words": ["aeonik"]
 }

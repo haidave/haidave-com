@@ -7,23 +7,11 @@ import { HomePageContent } from '../components/home-content'
 
 const HomePage = () => {
   return (
-    <PageTransitionContainer>
-      <Section.Root>
-        <Section.Title>Heyo, welcome!</Section.Title>
-        <Section.Description>
-          I&apos;m <ScrambleText originalText="Dave" animatedText="Hai" /> &mdash; a Frontend Engineer at{' '}
-          <Link
-            href="https://www.strv.com/"
-            isExternal
-            className='relative after:absolute after:right-[-5px] after:content-["."]'
-          >
-            STRV
-          </Link>
-        </Section.Description>
-
-        <HomePageContent />
-      </Section.Root>
-    </PageTransitionContainer>
+    <div>
+      <div>
+        <h1></h1>
+      </div>
+    </div>
   )
 }
 
