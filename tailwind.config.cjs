@@ -6,6 +6,7 @@ const config = {
     './src/content/**/*.{md,mdx}',
     './src/modules/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {

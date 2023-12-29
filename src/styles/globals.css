@@ -6,13 +6,13 @@
 @layer base {
   :root {
     /* Text */
-    --text-primary: #ededed;
+    --text-primary: #000000;
     --text-secondary: #a0a0a0;
     --text-tertiary: #7e7e7e;
     --text-gradient: linear-gradient(333deg, #aaa, #fff);
 
     /* Background */
-    --bg-primary: #000b00;
+    --bg-primary: #c0c6c9;
     --bg-primary-rgba: rgba(22, 22, 22, 0.8);
     --bg-secondary: #1c1c1c;
     --bg-tertiary: #232323;
@@ -34,13 +34,21 @@
     );
 
     /* Border */
-    --border-primary: rgba(255, 255, 255, 0.5);
+    --border-primary: #000000;
 
     /* Box Shadow */
     --shadow-focus: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--text-primary);
 
     /* Widths */
     --max-width-section: 42.5rem; /* 680px */
+  }
+
+  .dark {
+    --bg-primary: #000b00;
+    --text-primary: #ededed;
+
+    /* Border */
+    --border-primary: rgba(255, 255, 255, 0.5);
   }
 }
 

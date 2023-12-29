@@ -47,21 +47,26 @@ const Navigation = () => {
 
   return (
     <footer className="fixed bottom-16 left-1/2 z-50 -translate-x-1/2">
-      <ol className="group relative flex px-2">
+      <ol className="group relative flex">
         {/* Top left corner */}
         <NavigationCorner className="left-0 top-0 group-hover:translate-x-1 group-hover:translate-y-1" />
         {/* Bottom left corner */}
         <NavigationCorner className="bottom-0 left-0 -rotate-90 group-hover:-translate-y-1 group-hover:translate-x-1" />
 
-        {navigationItems.map((item) => (
+        {navigationItems.map((item, index) => (
           <li
             key={item.shortcut}
             className={cn(
-              'blur-item cursor-pointer px-3 py-4 font-mono text-lg',
+              'blur-item flex cursor-pointer font-mono text-lg',
               isActive(item.href) ? 'font-bold' : 'font-light'
             )}
           >
-            <Link href={item.href}>{item.label}</Link>
+            <Link
+              href={item.href}
+              className={cn('px-3 py-4', index === 0 ? 'pl-5' : '', index === navigationItems.length - 1 ? 'pr-5' : '')}
+            >
+              {item.label}
+            </Link>
           </li>
         ))}
 
