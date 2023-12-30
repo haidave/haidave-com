@@ -3,6 +3,7 @@
 import NextLink from 'next/link'
 import { motion } from 'framer-motion'
 
+import { useCursorContext } from '~/lib/cursor-context-provider'
 import { cn } from '~/lib/utils'
 
 import { ExternalLinkIcon } from './parts/external-link-icon'
@@ -19,6 +20,7 @@ const MotionLink = motion(NextLink)
 export const Link = ({ href, isExternal, children, className }: LinkProps) => {
   const target = isExternal ? '_blank' : undefined
   const rel = isExternal ? 'noopener noreferrer' : undefined
+  const { setCanHover } = useCursorContext()
 
   const iconVariants = {
     hide: { pathLength: 0.7 },
@@ -37,6 +39,8 @@ export const Link = ({ href, isExternal, children, className }: LinkProps) => {
       )}
       whileHover="show"
       initial="hide"
+      onMouseEnter={() => setCanHover(true)}
+      onMouseLeave={() => setCanHover(false)}
     >
       {children}
       {isExternal ? (

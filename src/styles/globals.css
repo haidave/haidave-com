@@ -56,6 +56,7 @@
 *,
 *::before,
 *::after {
+  cursor: none !important;
   box-sizing: border-box;
   /* custom styles for borders */
   border-width: 0;
@@ -106,11 +107,6 @@ button {
   padding: 0;
   border-width: 0;
   background: none;
-  cursor: pointer;
-}
-
-button:disabled {
-  cursor: not-allowed;
 }
 
 a {

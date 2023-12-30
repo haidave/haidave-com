@@ -4,8 +4,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { aeonik, ibmPlexMono } from '~/modules/design-system/theme/fonts'
 
 import '~/styles/globals.css'
+import { CursorContextProvider } from '~/lib/cursor-context-provider'
 import { ThemeProvider } from '~/lib/theme-provider'
 
+import { Cursor } from '../cursor'
 import { Frame } from '../frame'
 import { Navigation } from '../navigation'
 
@@ -14,9 +16,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en" className={`${aeonik.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
       <body className="bg-primary text-primary">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <Frame />
-          <main>{children}</main>
-          <Navigation />
+          <CursorContextProvider>
+            <Frame />
+            <main>{children}</main>
+            <Navigation />
+            <Cursor />
+          </CursorContextProvider>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
