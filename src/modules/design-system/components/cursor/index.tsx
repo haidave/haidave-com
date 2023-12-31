@@ -90,14 +90,13 @@ const Cursor = () => {
       />
 
       {/* circle */}
-      {canHover ? (
-        <div
-          className={cn(
-            'h-10 w-10 shrink-0 rounded-full border border-solid border-black transition duration-300 dark:border-white',
-            isMouseDown ? 'scale-0' : ''
-          )}
-        />
-      ) : null}
+      <div
+        className={cn(
+          'h-10 w-10 shrink-0 rounded-full border border-solid border-black transition duration-300 dark:border-white',
+          canHover ? 'scale-100' : 'scale-0',
+          isMouseDown ? 'scale-0' : ''
+        )}
+      />
     </motion.div>
   )
 }
