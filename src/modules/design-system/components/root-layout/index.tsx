@@ -18,7 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <CursorContextProvider>
             <Frame />
-            <main>{children}</main>
+            <main className="fixed inset-10 p-10">{children}</main>
             <Navigation />
             <Cursor />
           </CursorContextProvider>
