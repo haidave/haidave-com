@@ -13,6 +13,10 @@ const config = {
         sans: ['var(--font-sans)'],
         mono: ['var(--font-mono)'],
       },
+      // https://www.fluid-type-scale.com/
+      fontSize: {
+        '9xl': 'clamp(3rem, 5.26vw + 1.68rem, 8rem)',
+      },
       textColor: {
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',

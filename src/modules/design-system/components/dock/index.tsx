@@ -1,7 +1,7 @@
 'use client'
 
 import { useMotionValue } from 'framer-motion'
-import { FolderClosedIcon, HomeIcon, PencilIcon, UserIcon, WrenchIcon } from 'lucide-react'
+import { FolderClosedIcon, PencilIcon, UserIcon, WrenchIcon } from 'lucide-react'
 
 import { ROUTES } from '~/config/routes'
 import { cn } from '~/lib/utils'
@@ -11,12 +11,12 @@ import { DockItem } from './parts/dock-item'
 const iconStyles = 'h-full w-full'
 
 const dockItems = [
-  {
-    href: ROUTES.home,
-    icon: <HomeIcon className={iconStyles} />,
-    tooltip: 'home',
-    shortcut: '1',
-  },
+  // {
+  //   href: ROUTES.home,
+  //   icon: <HomeIcon className={iconStyles} />,
+  //   tooltip: 'home',
+  //   shortcut: '1',
+  // },
   {
     href: ROUTES.about,
     icon: <UserIcon className={iconStyles} />,

@@ -47,7 +47,9 @@ const Cursor = () => {
 
   return (
     <motion.div
-      className={cn('pointer-events-none fixed left-0 top-0 flex h-5 w-5 items-center justify-center')}
+      className={cn(
+        'pointer-events-none fixed left-0 top-0 z-50 flex h-5 w-5 items-center justify-center mix-blend-difference'
+      )}
       style={{
         translateY: mouse.y,
         translateX: mouse.x,
@@ -86,15 +88,6 @@ const Cursor = () => {
           'absolute left-0 top-1/2 h-0.5 w-1.5 -translate-y-1/2 bg-black transition duration-300 dark:bg-white',
           canHover ? 'w-2.5 -translate-x-3.5' : '',
           isMouseDown ? 'translate-x-1' : ''
-        )}
-      />
-
-      {/* circle */}
-      <div
-        className={cn(
-          'h-10 w-10 shrink-0 rounded-full border border-solid border-black transition duration-300 dark:border-white',
-          canHover ? 'scale-100' : 'scale-0',
-          isMouseDown ? 'scale-0' : ''
         )}
       />
     </motion.div>
