@@ -25,11 +25,11 @@ const STACK = [
   'Expo',
   'TypeScript',
   'Supabase',
+  'React Query',
+  'Storybook',
   'Framer Motion',
   'Tailwind CSS',
   'styled-components',
-  'React Query',
-  'Storybook',
 ]
 
 const HomePage = () => {
@@ -62,6 +62,7 @@ const HomePage = () => {
           <div className="w-3/4 text-right text-2xl tracking-tight">
             <p className="">Heyo! I&apos;m Dave — a Frontend Engineer based in Prague, Czech Republic.</p>
             <p className="">Currently building next-level software solutions at STRV.</p>
+            <p>I take pride in my attention to detail and my endeavor for prime user satisfaction.</p>
             <p className="">
               When I&apos;m not coding, I enjoy living life and exploring the art of street photography.
             </p>
