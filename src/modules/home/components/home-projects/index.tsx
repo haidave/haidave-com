@@ -3,6 +3,8 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
+import { CurvedLine } from '~/modules/design-system/components/curved-line'
+
 const HomeProjects = () => {
   const targetRef = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -13,7 +15,7 @@ const HomeProjects = () => {
 
   return (
     <>
-      <div className="h-px w-full bg-white/50" />
+      <CurvedLine />
       <div ref={targetRef} className="relative -mx-12 h-[280svh]">
         <div className="sticky top-10 flex h-screen overflow-hidden px-12">
           <motion.div style={{ x }} className="mt-20 flex h-[85%] gap-8">

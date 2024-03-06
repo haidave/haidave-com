@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import { CurvedLine } from '~/modules/design-system/components/curved-line'
+
 import { HomeProjects } from '../components/home-projects'
 
 const HOBBIES = [
@@ -56,7 +58,7 @@ const HomePage = () => {
 
       {/* About me */}
       <section className="mt-36">
-        <div className="mb-20 h-px w-full bg-white/50" />
+        <CurvedLine className="mb-20" />
         <div className="flex justify-between">
           <h2 className="text-4xl uppercase">About me</h2>
           <div className="w-3/4 text-right text-2xl tracking-tight">
@@ -79,11 +81,11 @@ const HomePage = () => {
 
       {/* How I work */}
       <section className="mt-36">
-        <div className="mb-20 h-px w-full bg-white/50" />
+        <CurvedLine className="mb-20" />
         <div className="grid gap-20">
           <div className="flex justify-between">
             <h2 className="text-4xl uppercase">Tech Stack</h2>
-            <div className="flex w-3/4 flex-wrap items-start justify-end gap-2">
+            <div className="flex w-3/4 flex-wrap items-start justify-end gap-x-2 gap-y-3">
               {STACK.map((stack) => (
                 <div key={stack} className="rounded-[2.5rem] border px-4 py-1">
                   <span className="uppercase">{stack}</span>
