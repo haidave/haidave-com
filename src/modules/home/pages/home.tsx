@@ -26,8 +26,10 @@ const STACK = [
   'React Native',
   'Expo',
   'TypeScript',
+  'Turborepo',
   'Supabase',
   'React Query',
+  'Zustand',
   'Storybook',
   'Framer Motion',
   'Tailwind CSS',
@@ -57,17 +59,15 @@ const HomePage = () => {
       </div>
 
       {/* About me */}
-      <section className="mt-36">
+      <section className="mt-32">
         <CurvedLine className="mb-20" />
         <div className="flex justify-between">
           <h2 className="text-4xl uppercase">About me</h2>
           <div className="w-3/4 text-right text-2xl tracking-tight">
-            <p className="">Heyo! I&apos;m Dave — a Frontend Engineer based in Prague, Czech Republic.</p>
-            <p className="">Currently building next-level software solutions at STRV.</p>
-            <p>I take pride in my attention to detail and my endeavor for prime user satisfaction.</p>
-            <p className="">
-              When I&apos;m not coding, I enjoy living life and exploring the art of street photography.
-            </p>
+            <p className="">Heyo! I&apos;m Dave — a Frontend Engineer based in Prague.</p>
+            <p className="">Currently working at STRV and building next-level applications.</p>
+            <p>I take pride in my attention to detail and endeavor for user satisfaction.</p>
+            <p className="">When I&apos;m not coding, I enjoy living life and capturing moments with my camera.</p>
           </div>
         </div>
         <div className="mt-20 flex h-max w-full flex-wrap-reverse justify-center rounded-[2.5rem] border pt-20">
@@ -80,7 +80,7 @@ const HomePage = () => {
       </section>
 
       {/* How I work */}
-      <section className="mt-36">
+      <section className="mt-32">
         <CurvedLine className="mb-20" />
         <div className="grid gap-20">
           <div className="flex justify-between">
@@ -97,13 +97,13 @@ const HomePage = () => {
       </section>
 
       {/* Projects */}
-      <section className="mt-36">
+      <section className="mt-32">
         <HomeProjects />
       </section>
 
       {/* Let's connect section */}
       <div className="grid h-[100svh] items-end">
-        <div className="grid h-[80%] w-full place-items-center rounded-[2.5rem] border">
+        <div className="relative grid h-[80%] w-full place-items-center rounded-[2.5rem] border">
           <div className="text-center">
             <p className="text-xl uppercase">Got a project in mind?</p>
             <p className="mt-5 text-9xl font-medium uppercase ">Let&apos;s connect</p>
@@ -116,7 +116,7 @@ const HomePage = () => {
       </div>
 
       {/* Footer */}
-      <footer className="mt-8">
+      <footer className="mt-6">
         <div className="flex justify-between">
           <p className="text-sm uppercase">&copy;2024 All rights reserved</p>
           <div className="flex gap-12 text-sm uppercase">

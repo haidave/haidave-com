@@ -11,13 +11,13 @@ const HomeProjects = () => {
     target: targetRef,
   })
 
-  const x = useTransform(scrollYProgress, [0, 0.85], ['0%', '-69.9%'])
+  const x = useTransform(scrollYProgress, [0, 0.9], ['0%', '-69.9%'])
 
   return (
     <>
       <CurvedLine />
       <div ref={targetRef} className="relative -mx-12 h-[280svh]">
-        <div className="sticky top-10 flex h-screen overflow-hidden px-12">
+        <div className="sticky top-2 flex h-screen overflow-hidden px-12">
           <motion.div style={{ x }} className="mt-20 flex h-[85%] gap-8">
             <div className="w-[calc(50vw-4.375rem)]">
               <h2 className="text-4xl uppercase">Selected Work</h2>
