@@ -11,6 +11,7 @@ const CURSOR_SIZE = 20
 const Cursor = () => {
   const { canHover } = useCursorContext()
   const [isMouseDown, setIsMouseDown] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
   const mouse = {
     x: useMotionValue(-10),
@@ -22,6 +23,13 @@ const Cursor = () => {
     mouse.x.set(clientX - CURSOR_SIZE / 2)
     mouse.y.set(clientY - CURSOR_SIZE / 2)
   }
+
+  useEffect(() => {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    if (!isTouchDevice) {
+      setIsVisible(true)
+    }
+  }, [])
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove)
@@ -45,7 +53,7 @@ const Cursor = () => {
     }
   })
 
-  return (
+  return isVisible ? (
     <motion.div
       className={cn(
         'pointer-events-none fixed left-0 top-0 z-50 flex h-5 w-5 items-center justify-center mix-blend-difference'
@@ -91,7 +99,7 @@ const Cursor = () => {
         )}
       />
     </motion.div>
-  )
+  ) : null
 }
 
 export { Cursor }
