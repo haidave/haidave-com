@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { CurvedLine } from '~/modules/design-system/components/curved-line'
 
+import { Hero } from '../components/hero'
 import { HomeProjects } from '../components/home-projects'
 
 const HOBBIES = [
@@ -38,25 +39,8 @@ const STACK = [
 
 const HomePage = () => {
   return (
-    <div className="px-12 py-6">
-      {/* HERO section */}
-      <div className="relative grid h-[100svh] min-h-[45rem]">
-        <div className="flex gap-8">
-          <div className="mt-64 flex w-max flex-col items-end">
-            <h1 className="text-9xl font-medium uppercase leading-[0.8]">
-              <span className="block">Frontend</span>
-              <span className="ml-32">Engineer</span>
-            </h1>
-            <p className="mr-2 mt-2 max-w-xs justify-self-end text-right text-sm uppercase tracking-wide">
-              Obsessed with building pixel-perfect and polished interfaces that are also accessible and intuitive.
-            </p>
-          </div>
-
-          <div className="relative mt-20 max-h-[60rem] w-full">
-            <Image src="/hero-me.png" priority fill alt="Me" className="object-contain object-top" />
-          </div>
-        </div>
-      </div>
+    <div className="p-6 sm:px-12">
+      <Hero />
 
       {/* About me */}
       <section className="mt-32">
@@ -85,7 +69,7 @@ const HomePage = () => {
         <div className="grid gap-20">
           <div className="flex justify-between">
             <h2 className="text-4xl uppercase">Tech Stack</h2>
-            <div className="flex w-3/4 flex-wrap items-start justify-end gap-x-2 gap-y-3">
+            <div className="flex w-3/4 max-w-[60rem] flex-wrap items-start justify-end gap-x-2 gap-y-3">
               {STACK.map((stack) => (
                 <div key={stack} className="rounded-[2.5rem] border px-4 py-1">
                   <span className="uppercase">{stack}</span>
@@ -97,9 +81,7 @@ const HomePage = () => {
       </section>
 
       {/* Projects */}
-      <section className="mt-32">
-        <HomeProjects />
-      </section>
+      <section className="mt-32">{/* <HomeProjects /> */}</section>
 
       {/* Let's connect section */}
       <div className="grid h-[100svh] items-end">

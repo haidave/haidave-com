@@ -15,7 +15,7 @@ const config = {
       },
       // https://www.fluid-type-scale.com/
       fontSize: {
-        '9xl': 'clamp(3rem, 5.26vw + 1.68rem, 8rem)',
+        '9xl': 'clamp(3.25rem, 5.26vw + 1.68rem, 8rem)',
       },
       textColor: {
         primary: 'var(--text-primary)',
