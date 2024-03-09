@@ -22,7 +22,7 @@ const HomeAbout = () => {
       <div className="flex flex-col gap-8 md:flex-row md:justify-between">
         {/* TODO make 4xl responsive */}
         <h2 className="text-3xl uppercase md:text-4xl">About me</h2>
-        <div className="grid gap-4 text-xl tracking-tight md:w-3/4 md:gap-0 md:text-right md:text-2xl">
+        <div className="grid gap-4 text-lg tracking-tight md:w-3/4 md:gap-0 md:text-right md:text-2xl">
           <p className="leading-normal md:leading-[1.7]">Heyo! I&apos;m Dave — a Frontend Engineer based in Prague.</p>
           <p className="leading-normal md:leading-[1.7]">
             Currently working at STRV and building next-level applications.

@@ -31,7 +31,7 @@ const HomeProjectsMobile = () => {
       <div className="grid">
         <h2 className="text-3xl uppercase md:text-4xl">Selected Work</h2>
         <div ref={emblaRef} className="-mx-6 mt-8 overflow-hidden px-6">
-          <ul className="flex gap-4 ">
+          <ul className="flex gap-4">
             {PROJECTS.map((project, index) => (
               <li key={index} className="min-w-0 max-w-[75%] shrink-0 grow-0 basis-full rounded-[2.5rem] border p-8">
                 <h3>{project.name}</h3>
