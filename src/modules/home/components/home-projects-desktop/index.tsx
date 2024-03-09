@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 import { CurvedLine } from '~/modules/design-system/components/curved-line'
 
-const HomeProjects = () => {
+const HomeProjectsDesktop = () => {
   const targetRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -14,7 +14,7 @@ const HomeProjects = () => {
   const x = useTransform(scrollYProgress, [0, 0.9], ['0%', '-69.85%'])
 
   return (
-    <>
+    <section className="mt-32 hidden md:block">
       <CurvedLine />
       <div ref={targetRef} className="relative -mx-12 h-[280svh]">
         <div className="sticky top-2 flex h-screen overflow-hidden px-12">
@@ -42,8 +42,8 @@ const HomeProjects = () => {
           </motion.div>
         </div>
       </div>
-    </>
+    </section>
   )
 }
 
-export { HomeProjects }
+export { HomeProjectsDesktop }

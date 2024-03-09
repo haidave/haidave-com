@@ -1,6 +1,7 @@
 import { HomeAbout } from '../components/home-about'
 import { HomeHero } from '../components/home-hero'
-import { HomeProjects } from '../components/home-projects'
+import { HomeProjectsDesktop } from '../components/home-projects-desktop'
+import { HomeProjectsMobile } from '../components/home-projects-mobile'
 import { HomeStack } from '../components/home-stack'
 
 const HomePage = () => {
@@ -9,9 +10,8 @@ const HomePage = () => {
       <HomeHero />
       <HomeAbout />
       <HomeStack />
-
-      {/* Projects */}
-      <section className="mt-32">{/* <HomeProjects /> */}</section>
+      <HomeProjectsMobile />
+      <HomeProjectsDesktop />
 
       {/* Let's connect section */}
       <div className="grid h-[100svh] items-end">
