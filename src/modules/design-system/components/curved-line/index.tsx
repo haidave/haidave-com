@@ -82,7 +82,7 @@ const CurvedLine = ({ className }: CurvedLineProps) => {
         className="relative top-[-20px] z-10 h-[40px] hover:top-[-75px] hover:h-[150px]"
       />
       <svg className="absolute top-[-50px] h-[100px] w-full">
-        <path className="fill-[#000b00] stroke-white stroke-1" ref={path} />
+        <path className="fill-[#000b00] stroke-white/50 stroke-1" ref={path} />
       </svg>
     </div>
   )

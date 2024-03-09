@@ -2,23 +2,9 @@ import Image from 'next/image'
 
 import { CurvedLine } from '~/modules/design-system/components/curved-line'
 
-import { Hero } from '../components/hero'
+import { HomeAbout } from '../components/home-about'
+import { HomeHero } from '../components/home-hero'
 import { HomeProjects } from '../components/home-projects'
-
-const HOBBIES = [
-  'Bouldering',
-  'Street photography',
-  'Productivity',
-  'Anime',
-  'Football',
-  'Biohacking',
-  'Calisthenics',
-  'Self-Development',
-  'Minimalism',
-  'Badminton',
-  'All black',
-  'Stoicism',
-]
 
 const STACK = [
   'React',
@@ -40,29 +26,8 @@ const STACK = [
 const HomePage = () => {
   return (
     <div className="p-6 sm:px-12">
-      <Hero />
-
-      {/* About me */}
-      <section className="mt-32">
-        <CurvedLine className="mb-20" />
-        <div className="flex justify-between">
-          <h2 className="text-4xl uppercase">About me</h2>
-          <div className="w-3/4 text-right text-2xl tracking-tight">
-            <p className="">Heyo! I&apos;m Dave — a Frontend Engineer based in Prague.</p>
-            <p className="">Currently working at STRV and building next-level applications.</p>
-            <p>I take pride in my attention to detail and endeavor for user satisfaction.</p>
-            <p className="">When I&apos;m not coding, I enjoy living life and capturing moments with my camera.</p>
-          </div>
-        </div>
-        <div className="mt-20 flex h-max w-full flex-wrap-reverse justify-center rounded-[2.5rem] border pt-20">
-          {HOBBIES.map((hobby) => (
-            <div key={hobby} className="grid aspect-square h-40 w-40 place-items-center rounded-full border p-6">
-              <span className="text-center uppercase">{hobby}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
+      <HomeHero />
+      <HomeAbout />
       {/* How I work */}
       <section className="mt-32">
         <CurvedLine className="mb-20" />

@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-const Hero = () => {
+const HomeHero = () => {
   return (
-    <div className="relative grid h-[100svh] items-center justify-center md:min-h-[45rem] md:items-stretch md:justify-normal">
+    <section className="relative grid h-[100svh] items-center justify-center md:min-h-[45rem] md:items-stretch md:justify-normal">
       <div className="grid md:grid-cols-2 md:gap-8">
         {/* copy */}
         <div className="flex w-max flex-col md:mt-64 md:items-end">
@@ -20,8 +20,8 @@ const Hero = () => {
           <Image src="/hero-me.png" priority fill alt="Me" className="object-contain object-top" />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
-export { Hero }
+export { HomeHero }
