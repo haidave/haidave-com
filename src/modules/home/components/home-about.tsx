@@ -28,7 +28,7 @@ const HomeAbout = () => {
             Currently working at STRV and building next-level applications.
           </p>
           <p className="leading-normal md:leading-[1.7]">
-            I take pride in my attention to detail and endeavor for user satisfaction.
+            I take pride in my attention to detail and aim for prime user satisfaction.
           </p>
           <p className="leading-normal md:leading-[1.7]">
             When I&apos;m not coding, I enjoy living life and capturing moments with my camera.

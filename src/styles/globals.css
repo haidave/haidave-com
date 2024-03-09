@@ -41,6 +41,9 @@
 
     /* Widths */
     --max-width-section: 42.5rem; /* 680px */
+
+    /* Heights */
+    --header-height: 5rem; /* 80px */
   }
 
   .dark {

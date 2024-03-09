@@ -33,6 +33,9 @@ const config = {
         'linear-gradient': 'var(--bg-linear-gradient)',
         'linear-gradient-subtle': 'var(--bg-linear-gradient-subtle)',
       },
+      height: {
+        screen: 'calc((var(--vh) * 100) - var(--header-height))',
+      },
       maxWidth: {
         section: 'var(--max-width-section)',
       },
