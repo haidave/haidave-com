@@ -3,7 +3,7 @@ import { Link } from '~/modules/design-system/components/link'
 
 const HomeConnect = () => {
   return (
-    <section className="mt-20 flex h-screen flex-col justify-end md:mt-32">
+    <section className="mt-20 flex h-screen flex-col justify-end transition-all ease-in-out md:mt-32">
       <div className="relative grid h-full w-full place-items-center rounded-[2.5rem] border">
         <div className="text-center">
           <p className="text-lg uppercase md:text-xl">Got a project in mind?</p>
